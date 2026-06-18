@@ -1,6 +1,7 @@
 <div align="center">
   <img src="RayStudio.png" alt="RayStudio Logo" width="120"/>
   <h1>Azure Cost Forecasting Engine</h1>
+  <img src="docs/banner.png" alt="Azure Cost Forecasting Engine" width="100%"/>
 </div>
 
 > 🇩🇪 [Deutsche Version](README.de.md)
