@@ -19,17 +19,20 @@
 ## v0.2.0
 
 - [ ] Budget alert integration: compare forecast against defined monthly budget
+- [ ] Azure Cost Management budget threshold notifications via webhook
 - [ ] Per-resource-group breakdown in forecasts
 - [ ] Multi-subscription aggregation
-- [ ] CSV and Excel export
+- [ ] CSV and Excel / Power BI-compatible export
 - [ ] `acfe compare` command: compare two time periods
 
 ## v0.3.0
 
 - [ ] Azure Cost Management Query API (more granular data)
+- [ ] Azure Monitor integration: push anomaly alerts to Log Analytics or Action Groups
 - [ ] Forecast accuracy tracking: compare previous forecasts against actuals
 - [ ] Seasonal decomposition: separate weekly patterns from long-term trend
 - [ ] Tag-based cost allocation reports
+- [ ] Power BI dataset export via Azure Blob Storage
 
 ## v1.0.0
 

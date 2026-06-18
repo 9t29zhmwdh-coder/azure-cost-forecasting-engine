@@ -7,6 +7,8 @@
 
 **Analyse historischer Azure-Verbrauchsdaten, Kostenprognose fuer die naechsten 30, 60 und 90 Tage, Erkennung von Kosten-Anomalien und priorisierte Optimierungsempfehlungen.**
 
+Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework/). Keine externen Bibliotheken fuer Zahlenrechnung erforderlich.
+
 [![Python](https://img.shields.io/badge/Python-3.11+-orange?logo=python)](https://www.python.org)
 [![Azure Cost Management](https://img.shields.io/badge/Azure%20Cost%20Management-blue?logo=microsoftazure)](https://learn.microsoft.com/de-de/azure/cost-management-billing/)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey?logo=linux)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine)
