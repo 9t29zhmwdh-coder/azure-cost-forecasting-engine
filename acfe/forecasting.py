@@ -41,7 +41,6 @@ def forecast(
     lr_slope, lr_intercept = _linear_regression(list(range(n)), costs)
     hl_level, hl_trend = _holt_smoothing(costs)
 
-    mean = sum(costs) / n
     residuals = [c - (lr_intercept + lr_slope * i) for i, c in enumerate(costs)]
     rmse = math.sqrt(sum(r**2 for r in residuals) / n)
 

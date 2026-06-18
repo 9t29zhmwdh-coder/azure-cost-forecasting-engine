@@ -14,7 +14,7 @@ from acfe.analyzer import analyze
 from acfe.client import ConsumptionClient
 from acfe.forecasting import detect_anomalies, forecast
 from acfe.models import CostReport
-from acfe.normalizer import fill_missing_days, normalize, top_services_by_cost
+from acfe.normalizer import fill_missing_days, normalize
 from acfe.report import to_html, to_json, to_markdown
 
 
