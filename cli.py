@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -189,7 +190,6 @@ def _load_dotenv(path: Path) -> None:
         line = line.strip()
         if line and not line.startswith("#") and "=" in line:
             key, _, value = line.partition("=")
-            import os
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 

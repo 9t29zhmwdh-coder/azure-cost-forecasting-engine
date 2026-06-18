@@ -5,7 +5,7 @@ from __future__ import annotations
 import dataclasses
 import json
 
-from .models import CostReport, ForecastResult, Recommendation
+from .models import CostReport
 
 
 def to_json(report: CostReport) -> str:
