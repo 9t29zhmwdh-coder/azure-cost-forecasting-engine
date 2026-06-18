@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-18",
+  "subscription_id": "00000000-0000-0000-0000-000000000001",
+  "history_days": 90,
+  "currency": "USD",
+  "average_daily_cost": 1744.18,
+  "total_historical_cost": 156976.20,
+  "forecast_30": {
+    "horizon_days": 30,
+    "baseline_daily_cost": 1771.74,
+    "trend_direction": "increasing",
+    "trend_percent_per_day": 0.198,
+    "projected_total": 57842.40,
+    "projected_total_vs_baseline": 3691.20
+  },
+  "forecast_90": {
+    "horizon_days": 90,
+    "baseline_daily_cost": 1771.74,
+    "trend_direction": "increasing",
+    "trend_percent_per_day": 0.198,
+    "projected_total": 184291.60,
+    "projected_total_vs_baseline": 21542.60
+  },
+  "recommendations": [
+    {
+      "service": "Microsoft.Sql",
+      "category": "reserved_instance",
+      "severity": "high",
+      "title": "Reserved Instance candidate: Microsoft.Sql",
+      "description": "Microsoft.Sql shows highly predictable usage (CV 2.0%) over 90 days. A 1-year Reserved Instance could reduce cost by 35%.",
+      "estimated_monthly_saving": 3591.00,
+      "estimated_saving_percent": 35.0
+    },
+    {
+      "service": "Microsoft.Storage",
+      "category": "reserved_instance",
+      "severity": "high",
+      "title": "Reserved Instance candidate: Microsoft.Storage",
+      "description": "Microsoft.Storage shows highly predictable usage (CV 4.6%) over 90 days. A 1-year Reserved Instance could reduce cost by 35%.",
+      "estimated_monthly_saving": 923.00,
+      "estimated_saving_percent": 35.0
+    },
+    {
+      "service": "Microsoft.Compute",
+      "category": "anomaly",
+      "severity": "medium",
+      "title": "Cost spike detected: Microsoft.Compute",
+      "description": "1 cost spike exceeding mean + 2.5 standard deviations detected. Investigate for runaway workloads or misconfigured autoscaling.",
+      "estimated_monthly_saving": 1834.80,
+      "estimated_saving_percent": 78.0
+    }
+  ],
+  "total_estimated_monthly_saving": 7124.80
+}
