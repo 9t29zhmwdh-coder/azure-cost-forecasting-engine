@@ -7,7 +7,7 @@ name = "azure-cost-forecasting-engine"
 version = "0.1.0"
 description = "Analyze and forecast Azure costs using historical consumption data"
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
     "requests>=2.31",
@@ -32,6 +32,9 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP"]
 ignore = ["E501"]
+
+[tool.setuptools.packages.find]
+include = ["acfe*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
