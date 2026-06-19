@@ -5,9 +5,9 @@
 
 > 🇬🇧 [English Version](README.md)
 
-**Analyse historischer Azure-Verbrauchsdaten, Kostenprognose fuer die naechsten 30, 60 und 90 Tage, Erkennung von Kosten-Anomalien und priorisierte Optimierungsempfehlungen.**
+**Analyse historischer Azure-Verbrauchsdaten, Kostenprognose für die naechsten 30, 60 und 90 Tage, Erkennung von Kosten-Anomalien und priorisierte Optimierungsempfehlungen.**
 
-Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework/). Keine externen Bibliotheken fuer Zahlenrechnung erforderlich.
+Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework/). Keine externen Bibliotheken für Zahlenrechnung erforderlich.
 
 [![CI](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions) ![Azure Ready](https://img.shields.io/badge/Azure-Ready-0078d4?logo=microsoftazure&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Ubuntu-lightgrey) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
 
@@ -24,7 +24,7 @@ Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework
 | Trendanalyse | Klassifikation in stabil, steigend oder sinkend |
 | Reserved Instances | Dienste mit stabilem Verbrauch (CV unter 15%) als RI-Kandidaten |
 | Rightsizing | Dienste mit taeglich steigenden Kosten ueber 1,5% des Mittels |
-| Prognosebandbreiten | 80%-Konfidenzintervalle fuer alle Prognosepunkte |
+| Prognosebandbreiten | 80%-Konfidenzintervalle für alle Prognosepunkte |
 | Demo-Modus | Vollstaendige Analyse mit synthetischen Daten ohne Azure-Zugangsdaten |
 | Ausgabeformate | Tabelle, JSON, Markdown, HTML |
 
@@ -70,7 +70,7 @@ python cli.py run --demo --format md --output report.md
 | Ensemble | Mittelwert beider Methoden | Reduziert Overfitting aus beiden Einzelmodellen |
 | Konfidenzintervall | RMSE-basiert, 80% | Weitet sich mit zunehmendem Prognosehorizont |
 
-Keine externen Bibliotheken fuer Zahlenrechnung noetig. Alle Berechnungen mit der Python-Standardbibliothek.
+Keine externen Bibliotheken für Zahlenrechnung noetig. Alle Berechnungen mit der Python-Standardbibliothek.
 
 ---
 
