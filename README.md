@@ -118,4 +118,4 @@ Credentials are read exclusively from environment variables. The `.env` file is 
 
 ---
 
-**Author:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) · **Status:** Active · v0.1.0 · **License:** MIT
+**Author:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) · **Status:** Active · ![version](https://img.shields.io/github/v/release/9t29zhmwdh-coder/azure-cost-forecasting-engine?label=\&color=6b7280\&style=flat-square) · **License:** MIT
