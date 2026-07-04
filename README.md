@@ -8,7 +8,7 @@
 
 **Analyze historical Azure consumption data, forecast the next 30, 60 and 90 days of cloud spend, detect cost anomalies, and generate prioritized optimization recommendations.**
 
-Compatible with the [Microsoft FinOps Framework](https://www.finops.org/framework/). No external numerical libraries required — pure Python with standard-library math.
+Compatible with the [Microsoft FinOps Framework](https://www.finops.org/framework/). No external numerical libraries required, just pure Python with standard-library math.
 
 [![CI](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions) ![Azure Ready](https://img.shields.io/badge/Azure-Ready-0078d4?logo=microsoftazure&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Ubuntu-lightgrey) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
 [![FinOps](https://img.shields.io/badge/FinOps-Ready-blue?logo=microsoftazure)](docs/forecasting_methodology.md)
