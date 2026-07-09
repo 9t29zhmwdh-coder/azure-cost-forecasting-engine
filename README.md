@@ -56,6 +56,15 @@ No write permissions are required or used. All API calls are GET requests to the
 
 ---
 
+## Requirements
+
+- Python 3.11+
+- Optional (for live Azure data): Azure subscription with the [Cost Management Reader](#required-azure-rbac-role) role assigned to an app registration
+
+> 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
+
+---
+
 ## Quick Start
 
 ```bash
