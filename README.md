@@ -15,6 +15,10 @@ Compatible with the [Microsoft FinOps Framework](https://www.finops.org/framewor
 
 ---
 
+> 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
+
+---
+
 ## Features
 
 | Capability | Description |
@@ -60,8 +64,6 @@ No write permissions are required or used. All API calls are GET requests to the
 
 - Python 3.11+
 - Optional (for live Azure data): Azure subscription with the [Cost Management Reader](#required-azure-rbac-role) role assigned to an app registration
-
-> 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
 
 ---
 
