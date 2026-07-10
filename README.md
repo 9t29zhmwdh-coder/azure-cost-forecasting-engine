@@ -4,7 +4,7 @@
   <img src="docs/banner.png" alt="Azure Cost Forecasting Engine" width="100%"/>
 </div>
 
-> 🇩🇪 [Deutsche Version](README.de.md)
+[🇩🇪 Deutsche Version](README.de.md)
 
 **Analyze historical Azure consumption data, forecast the next 30, 60 and 90 days of cloud spend, detect cost anomalies, and generate prioritized optimization recommendations.**
 

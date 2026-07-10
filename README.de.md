@@ -3,7 +3,7 @@
   <h1>Azure Cost Forecasting Engine</h1>
 </div>
 
-> 🇬🇧 [English Version](README.md)
+[🇬🇧 English Version](README.md)
 
 **Analyse historischer Azure-Verbrauchsdaten, Kostenprognose für die naechsten 30, 60 und 90 Tage, Erkennung von Kosten-Anomalien und priorisierte Optimierungsempfehlungen.**
 
