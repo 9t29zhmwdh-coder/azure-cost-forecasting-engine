@@ -13,6 +13,10 @@ Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework
 
 ---
 
+> 🌱 Neu hier? → [Schritt-für-Schritt-Anleitung für Einsteiger](GETTING_STARTED.md)
+
+---
+
 ## Funktionen
 
 | Funktion | Beschreibung |
