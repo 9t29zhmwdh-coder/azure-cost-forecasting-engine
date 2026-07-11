@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2] (2026-07-11)
+
+### Added
+
+- Documented Dual-Licensing readiness assessment in ROADMAP.md.
+
 ## [0.1.1] (2026-07-11)
 
 ### Fixed
