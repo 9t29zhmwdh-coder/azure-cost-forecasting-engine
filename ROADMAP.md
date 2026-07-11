@@ -40,3 +40,13 @@
 - [ ] Docker image for containerized runs
 - [ ] GitHub Action for automated monthly reports posted as PR comments
 - [ ] Jupyter notebook example with chart generation
+
+## Dual-Licensing Readiness
+
+Assessed 2026-07-11 as a Dual-Licensing candidate (Community MIT + Commercial/Enterprise tier): FinOps cost forecasting for cloud teams is an established commercial category (CloudHealth, Vantage and similar tools already charge for this exact feature set), and ACFE's own roadmap already lists several classic enterprise differentiators. Not ready yet; blocked on:
+
+- [ ] No multi-subscription or multi-tenant aggregation yet (v0.2.0 item above): an Enterprise tier's core value here is usually consolidated, cross-subscription reporting
+- [ ] No server or API component to gate a Commercial tier against: today ACFE is a pure local CLI with no persistence layer
+- [ ] Enterprise-shaped features (Power BI/Excel export, Azure Monitor push integration, budget/webhook alerts, forecast-accuracy tracking) are still only roadmap entries, not implemented
+
+Once multi-subscription aggregation (v0.2.0) and the Power BI/Azure Monitor integrations (v0.3.0) land, revisit: candidate Enterprise-only features would be multi-subscription/tenant aggregation, Power BI/Excel export, Azure Monitor push integration, and budget/webhook alerting, with the core forecasting engine (normalization, regression/Holt ensemble, anomaly detection, CLI) staying Community/MIT.
