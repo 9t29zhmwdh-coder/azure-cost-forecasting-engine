@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1] (2026-07-11)
+
+### Fixed
+
+- Updated SHA-pinned actions/checkout and actions/setup-python to their latest major versions in CI, since GitHub is deprecating the Node.js 20 runtime and the previously pinned versions (v4.2.2/v5.6.0) were being forced onto Node 24 and crashing during post-run cleanup.
+
 ## [0.1.0] (2026-06-18)
 
 ### Added
