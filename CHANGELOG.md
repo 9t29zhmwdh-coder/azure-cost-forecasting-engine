@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.3] (2026-07-12)
+
+### Added
+
+- README/README.de.md: "How it runs" callout, a real screenshot of a demo-generated HTML report (`docs/screenshot.png`), and an "In practice" paragraph, all missing until now.
+- README.de.md: "App-Registrierung einrichten" (App Registration Setup), "Optimierungsempfehlungen" (Optimization Recommendations), and "GitHub Action Integration" sections, matching README.md; it was missing all three.
+- "Uninstall/Cleanup" section (EN + DE).
+
+### Fixed
+
+- Removed em-dashes/en-dashes from GETTING_STARTED.md.
+- Fixed ASCII-substituted umlauts throughout README.de.md ("naechsten", "lueckenlose", "Glaettung", "ueberschreiten", "taeglich", "Vollstaendige", "Benoetigte", "befuellen", "hoeher", "noetig", and more), including one in a section heading.
+
 ## [0.1.2] (2026-07-11)
 
 ### Added
