@@ -24,7 +24,7 @@ py --version
 **Install Python:**
 
 1. Go to [python.org/downloads](https://www.python.org/downloads/) and download the latest installer.
-2. Run it. On the very first screen, **check the box "Add python.exe to PATH"** at the bottom before clicking Install — easy to miss, and the most common reason `py` isn't recognized afterwards.
+2. Run it. On the very first screen, **check the box "Add python.exe to PATH"** at the bottom before clicking Install; easy to miss, and the most common reason `py` isn't recognized afterwards.
 3. Close and reopen your terminal, then re-run `py --version` to confirm.
 
 ### 3. Download the project

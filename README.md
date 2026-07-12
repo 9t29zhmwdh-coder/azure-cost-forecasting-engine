@@ -13,9 +13,17 @@ Compatible with the [Microsoft FinOps Framework](https://www.finops.org/framewor
 [![CI](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions) ![Azure Ready](https://img.shields.io/badge/Azure-Ready-0078d4?logo=microsoftazure&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Ubuntu-lightgrey) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
 [![FinOps](https://img.shields.io/badge/FinOps-Ready-blue?logo=microsoftazure)](docs/forecasting_methodology.md)
 
+> **How it runs:** This is a command-line tool, not a desktop app and not a server. `cli.py run` runs once per invocation and exits after writing its report; there is no installer and no background process. Run `python cli.py run --demo` to see it work against built-in synthetic usage data, no Azure credentials needed.
+
+![Azure Cost Forecasting Engine](docs/screenshot.png)
+
 ---
 
 > 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
+
+---
+
+**In practice:** you point the engine at a subscription (or run `--demo` first with no credentials at all), and it prints a forecast for the next 30/60/90 days, flags anomalous spend days, and ranks concrete optimization actions (Reserved Instance candidates, rightsizing targets) by estimated monthly saving, as a table, JSON, Markdown, or a self-contained HTML report.
 
 ---
 
@@ -126,6 +134,15 @@ Copy `.github/workflows/ci.yml` as a template and add a scheduled run to automat
 ## No Credential Storage
 
 Credentials are read exclusively from environment variables. The `.env` file is gitignored. No credentials are written to disk, logged, or included in any report output.
+
+---
+
+## Uninstall / Cleanup
+
+- `pip uninstall azure-cost-forecasting-engine`
+- Delete your local `.env` file; it contains your Entra ID app registration's Tenant ID, Client ID and Client Secret
+- Remove any exported reports (`report.md`, `report.json`, `report.html`, etc.) you generated
+- In Entra ID, delete the app registration (e.g. `acfe-reader`) and remove its **Cost Management Reader** role assignment if you no longer need it
 
 ---
 
