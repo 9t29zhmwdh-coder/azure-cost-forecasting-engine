@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import sys
 from datetime import date, timedelta
+from importlib.metadata import version
 from pathlib import Path
 
 import click
@@ -19,7 +20,7 @@ from acfe.report import to_html, to_json, to_markdown
 
 
 @click.group()
-@click.version_option("0.1.0", prog_name="acfe")
+@click.version_option(version("azure-cost-forecasting-engine"), prog_name="acfe")
 def cli() -> None:
     """Azure Cost Forecasting Engine.
 

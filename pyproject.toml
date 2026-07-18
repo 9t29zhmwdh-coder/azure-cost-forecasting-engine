@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "azure-cost-forecasting-engine"
-version = "0.1.3"
+version = "1.0.0"
 description = "Analyze and forecast Azure costs using historical consumption data"
 readme = "README.md"
 license = "MIT"
@@ -32,6 +32,9 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP"]
 ignore = ["E501"]
+
+[tool.setuptools]
+py-modules = ["cli"]
 
 [tool.setuptools.packages.find]
 include = ["acfe*"]

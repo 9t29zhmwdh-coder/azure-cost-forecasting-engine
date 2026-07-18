@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0] - 2026-07-18
+
+First stable release: a real release pipeline now builds a wheel/sdist
+and attaches it to every GitHub Release, the prerequisite for a 1.0
+release per this portfolio's own SemVer discipline.
+
+### Fixed
+- The `acfe` console script was broken in any real installed environment: `[project.scripts] acfe = "cli:cli"` pointed at the top-level `cli.py`, but `[tool.setuptools.packages.find]` only packaged the `acfe/` package, so the built wheel never included `cli.py` and the installed command failed with `ModuleNotFoundError: No module named 'cli'`. Added `py-modules = ["cli"]`. Found and fixed by actually installing the built wheel into a fresh virtualenv and running the command, not just building it.
+- `acfe --version` reported a hardcoded `"0.1.0"` regardless of the real installed version. Now reads it from package metadata (`importlib.metadata.version(...)`).
+
+### Added
+- Release workflow (`release.yml`) that builds a wheel and sdist on every `v*` tag push and attaches them to a GitHub Release. Previously there was no packaged distribution; users had to install from source.
+
 ## [0.1.3] (2026-07-12)
 
 ### Added
