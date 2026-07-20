@@ -31,4 +31,4 @@ jobs:
         run: ruff check acfe/ cli.py tests/
 
       - name: Test (pytest)
-        run: pytest tests/ -v
+        run: pytest tests/ -v --cov=acfe --cov-report=term-missing
