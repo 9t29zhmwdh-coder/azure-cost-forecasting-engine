@@ -11,6 +11,7 @@
 Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework/). Keine externen Bibliotheken für Zahlenrechnung erforderlich, nur reines Python mit der Standardbibliothek.
 
 [![CI](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions) ![Azure Ready](https://img.shields.io/badge/Azure-Ready-0078d4?logo=microsoftazure&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Ubuntu-lightgrey) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/badge)](https://securityscorecards.dev/viewer/?uri=github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine)
 [![FinOps](https://img.shields.io/badge/FinOps-Ready-blue?logo=microsoftazure)](docs/forecasting_methodology.md)
 
 > **So läuft es:** Dies ist ein Kommandozeilen-Tool, keine Desktop-App und kein Server. `cli.py run` läuft einmal pro Aufruf und beendet sich nach dem Schreiben des Berichts; es gibt keinen Installer und keinen Hintergrundprozess. Führe `python cli.py run --demo` aus, um es mit eingebauten synthetischen Verbrauchsdaten zu sehen, keine Azure-Zugangsdaten nötig.
