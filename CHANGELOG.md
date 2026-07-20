@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1] - 2026-07-20
+
+### Changed
+
+- OpenSSF Scorecard workflow and badge.
+- `copilot-instructions.md` for consistent AI-assisted contributions.
+- Fixed the stale `__version__` string in `acfe/__init__.py` (was 0.1.0, now matches the packaged version).
+- Split the README's security/CI badges onto their own line, separate from the platform/tech/AI badges (they were rendering as a single merged line).
+
 ## [1.0.0] - 2026-07-18
 
 First stable release: a real release pipeline now builds a wheel/sdist
