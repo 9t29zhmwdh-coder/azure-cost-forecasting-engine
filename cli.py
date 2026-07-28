@@ -103,9 +103,7 @@ def run_cmd(
 
     anomalies = detect_anomalies(daily)
     if anomalies:
-        click.echo(
-            f"[acfe] {len(anomalies)} cost anomaly day(s) detected.", err=True
-        )
+        click.echo(f"[acfe] {len(anomalies)} cost anomaly day(s) detected.", err=True)
 
     click.echo("[acfe] Analyzing optimization opportunities...", err=True)
     recommendations = analyze(daily, fc90)
@@ -179,9 +177,7 @@ def _render_table(
         ]
         for rec in report.recommendations[:10]:
             icon = "[H]" if rec.severity == "high" else "[M]"
-            lines.append(
-                f"  {icon} {rec.estimated_monthly_saving:8.2f}/mo  {rec.title}"
-            )
+            lines.append(f"  {icon} {rec.estimated_monthly_saving:8.2f}/mo  {rec.title}")
 
     return "\n".join(lines)
 
