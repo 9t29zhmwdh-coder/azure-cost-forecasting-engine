@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.2] - 2026-07-28
+
+### Fixed
+
+- CI ran `ruff check acfe/ cli.py tests/`, a path list that left `examples/run_demo.py` unchecked. Nothing was hiding there, it is clean, but any future code in `examples/` would have gone unreviewed. CI now checks the whole tree. See `engineering-standards` `standards/ci-cd.md` section 3: a stage is not kept green by narrowing what it looks at.
+- Added `ruff format --check` to CI, which did not exist. It reformatted 5 files, all of it cosmetic line breaks and blank lines. 24 tests pass unchanged.
+
+### Changed
+
+- `ruff` is pinned to 0.16.0 instead of `>=0.4`. Without the pin the format check just added could turn red on unchanged source as soon as a new ruff changes what it considers formatted, per `engineering-standards` v0.7.0.
+
 ## [1.0.1] - 2026-07-20
 
 ### Changed

@@ -52,9 +52,7 @@ def fill_missing_days(daily_costs: list[DailyCost]) -> list[DailyCost]:
     return result
 
 
-def top_services_by_cost(
-    daily_costs: list[DailyCost], top_n: int = 10
-) -> list[tuple[str, float]]:
+def top_services_by_cost(daily_costs: list[DailyCost], top_n: int = 10) -> list[tuple[str, float]]:
     """Return the top N services ranked by total cost over the period."""
     totals: dict[str, float] = defaultdict(float)
     for day in daily_costs:

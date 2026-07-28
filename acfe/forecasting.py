@@ -31,8 +31,7 @@ def forecast(
     """
     if len(daily_costs) < _MIN_HISTORY_DAYS:
         raise ValueError(
-            f"At least {_MIN_HISTORY_DAYS} days of history required, "
-            f"got {len(daily_costs)}."
+            f"At least {_MIN_HISTORY_DAYS} days of history required, got {len(daily_costs)}."
         )
 
     costs = [d.total_cost for d in daily_costs]
@@ -117,6 +116,7 @@ def detect_anomalies(
 
 # --- Internal helpers ---
 
+
 def _linear_regression(x: list[float], y: list[float]) -> tuple[float, float]:
     """Ordinary least-squares linear regression. Returns (slope, intercept)."""
     n = len(x)
@@ -134,9 +134,7 @@ def _linear_regression(x: list[float], y: list[float]) -> tuple[float, float]:
     return slope, intercept
 
 
-def _holt_smoothing(
-    y: list[float], alpha: float = 0.3, beta: float = 0.1
-) -> tuple[float, float]:
+def _holt_smoothing(y: list[float], alpha: float = 0.3, beta: float = 0.1) -> tuple[float, float]:
     """Holt two-parameter exponential smoothing. Returns (level, trend)."""
     if len(y) < 2:
         return y[0] if y else 0.0, 0.0

@@ -58,6 +58,7 @@ def test_ri_candidate_detected_for_stable_service():
 
 def test_no_ri_for_variable_service():
     import random
+
     random.seed(99)
     daily = []
     start = date(2026, 1, 1)

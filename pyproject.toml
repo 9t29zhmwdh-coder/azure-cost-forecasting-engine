@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "azure-cost-forecasting-engine"
-version = "1.0.1"
+version = "1.0.2"
 description = "Analyze and forecast Azure costs using historical consumption data"
 readme = "README.md"
 license = "MIT"
@@ -21,7 +21,7 @@ acfe = "cli:cli"
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.4",
+    "ruff==0.16.0",
     "pytest>=8.0",
     "pytest-cov>=5.0",
 ]

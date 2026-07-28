@@ -110,9 +110,4 @@ tr:hover{{background:#f9f9f9}}.saving{{color:#107c10;font-weight:bold}}</style><
 
 
 def _esc(s: str) -> str:
-    return (
-        s.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
