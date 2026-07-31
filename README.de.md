@@ -6,9 +6,28 @@
 
 [🇬🇧 English Version](README.md)
 
-**Analyse historischer Azure-Verbrauchsdaten, Kostenprognose für die nächsten 30, 60 und 90 Tage, Erkennung von Kosten-Anomalien und priorisierte Optimierungsempfehlungen.**
+**Macht aus der Azure-Rechnung vom letzten Quartal eine Zahl fürs nächste, plus eine Liste, wo du kürzen kannst.**
 
-Kompatibel mit dem [Microsoft FinOps Framework](https://www.finops.org/framework/). Keine externen Bibliotheken für Zahlenrechnung erforderlich, nur reines Python mit der Standardbibliothek.
+Cost Management zeigt, was du bereits ausgegeben hast. Gefragt wird aber nach
+dem, was kommt: reisst dieses Quartal das Budget, welche Ressourcengruppe läuft
+in die falsche Richtung, und was ist die günstigste Änderung mit dem grössten
+Effekt.
+
+```
+acfe run --demo                    einmal ansehen, ganz ohne Azure-Zugang
+acfe run                           gegen die eigene Subscription
+acfe run --format md -o report.md  die Fassung, die du weiterreichst
+```
+
+Ein Lauf liest deine Verbrauchshistorie, rechnet 30, 60 und 90 Tage voraus,
+markiert Ausgaben, die aus ihrem eigenen Muster ausbrechen, und sortiert die
+gefundenen Einsparungen nach dem, was sie wert sind. Kompatibel mit dem
+[Microsoft FinOps Framework](https://www.finops.org/framework/), und ganz ohne
+Rechenbibliotheken: schlichtes Python und die Standardbibliothek.
+
+**Nichts für dich, wenn** du Alarme bei laufenden Kosten willst. Budgets und
+Alerts in Azure Cost Management machen das bereits und sind in die Plattform
+eingebaut. Hier geht es ums Planungsgespräch, nicht um den Pager.
 
 [![CI](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions) [![CodeQL](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/security/code-scanning) [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/badge)](https://securityscorecards.dev/viewer/?uri=github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine) [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13718/badge)](https://www.bestpractices.dev/projects/13718)
 ![Azure Ready](https://img.shields.io/badge/Azure-Ready-0078d4?logo=microsoftazure&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Ubuntu-lightgrey) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white) [![FinOps](https://img.shields.io/badge/FinOps-Ready-blue?logo=microsoftazure)](docs/forecasting_methodology.md)

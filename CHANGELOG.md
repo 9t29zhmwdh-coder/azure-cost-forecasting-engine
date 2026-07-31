@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.7] - 2026-07-31
+
+### Changed
+
+- Both READMEs now open with the questions the tool answers, which are whether the quarter lands over budget and what is worth cutting first, rather than restating the four processing steps. `run --demo` is shown first so a visitor can try it without an Azure account, and a short paragraph sends people wanting live spend alerts to Azure Cost Management budgets instead.
+
+---
+
 ## [1.0.6] - 2026-07-29
 
 ### Security
