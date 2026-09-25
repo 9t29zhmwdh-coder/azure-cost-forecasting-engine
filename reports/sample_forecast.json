@@ -1,25 +1,1299 @@
 {
-  "generated_at": "2026-06-18",
-  "subscription_id": "00000000-0000-0000-0000-000000000001",
+  "generated_at": "2026-09-25",
+  "subscription_id": "demo-subscription",
   "history_days": 90,
   "currency": "USD",
-  "average_daily_cost": 1744.18,
-  "total_historical_cost": 156976.20,
+  "average_daily_cost": 2098.68,
+  "total_historical_cost": 188881.52,
   "forecast_30": {
     "horizon_days": 30,
-    "baseline_daily_cost": 1771.74,
-    "trend_direction": "increasing",
-    "trend_percent_per_day": 0.198,
-    "projected_total": 57842.40,
-    "projected_total_vs_baseline": 3691.20
+    "baseline_daily_cost": 2320.11,
+    "trend_direction": "stable",
+    "trend_percent_per_day": 0.248,
+    "points": [
+      {
+        "day_offset": 1,
+        "date": "2026-09-25",
+        "predicted_cost": 2313.98,
+        "lower_bound": 1847.08,
+        "upper_bound": 2780.87
+      },
+      {
+        "day_offset": 2,
+        "date": "2026-09-26",
+        "predicted_cost": 2317.22,
+        "lower_bound": 1847.77,
+        "upper_bound": 2786.68
+      },
+      {
+        "day_offset": 3,
+        "date": "2026-09-27",
+        "predicted_cost": 2320.47,
+        "lower_bound": 1848.47,
+        "upper_bound": 2792.47
+      },
+      {
+        "day_offset": 4,
+        "date": "2026-09-28",
+        "predicted_cost": 2323.72,
+        "lower_bound": 1849.19,
+        "upper_bound": 2798.25
+      },
+      {
+        "day_offset": 5,
+        "date": "2026-09-29",
+        "predicted_cost": 2326.96,
+        "lower_bound": 1849.91,
+        "upper_bound": 2804.01
+      },
+      {
+        "day_offset": 6,
+        "date": "2026-09-30",
+        "predicted_cost": 2330.21,
+        "lower_bound": 1850.66,
+        "upper_bound": 2809.76
+      },
+      {
+        "day_offset": 7,
+        "date": "2026-10-01",
+        "predicted_cost": 2333.46,
+        "lower_bound": 1851.41,
+        "upper_bound": 2815.5
+      },
+      {
+        "day_offset": 8,
+        "date": "2026-10-02",
+        "predicted_cost": 2336.7,
+        "lower_bound": 1852.18,
+        "upper_bound": 2821.23
+      },
+      {
+        "day_offset": 9,
+        "date": "2026-10-03",
+        "predicted_cost": 2339.95,
+        "lower_bound": 1852.96,
+        "upper_bound": 2826.94
+      },
+      {
+        "day_offset": 10,
+        "date": "2026-10-04",
+        "predicted_cost": 2343.2,
+        "lower_bound": 1853.76,
+        "upper_bound": 2832.64
+      },
+      {
+        "day_offset": 11,
+        "date": "2026-10-05",
+        "predicted_cost": 2346.44,
+        "lower_bound": 1854.56,
+        "upper_bound": 2838.33
+      },
+      {
+        "day_offset": 12,
+        "date": "2026-10-06",
+        "predicted_cost": 2349.69,
+        "lower_bound": 1855.38,
+        "upper_bound": 2844.0
+      },
+      {
+        "day_offset": 13,
+        "date": "2026-10-07",
+        "predicted_cost": 2352.94,
+        "lower_bound": 1856.21,
+        "upper_bound": 2849.67
+      },
+      {
+        "day_offset": 14,
+        "date": "2026-10-08",
+        "predicted_cost": 2356.18,
+        "lower_bound": 1857.05,
+        "upper_bound": 2855.32
+      },
+      {
+        "day_offset": 15,
+        "date": "2026-10-09",
+        "predicted_cost": 2359.43,
+        "lower_bound": 1857.9,
+        "upper_bound": 2860.96
+      },
+      {
+        "day_offset": 16,
+        "date": "2026-10-10",
+        "predicted_cost": 2362.68,
+        "lower_bound": 1858.77,
+        "upper_bound": 2866.59
+      },
+      {
+        "day_offset": 17,
+        "date": "2026-10-11",
+        "predicted_cost": 2365.93,
+        "lower_bound": 1859.64,
+        "upper_bound": 2872.21
+      },
+      {
+        "day_offset": 18,
+        "date": "2026-10-12",
+        "predicted_cost": 2369.17,
+        "lower_bound": 1860.53,
+        "upper_bound": 2877.81
+      },
+      {
+        "day_offset": 19,
+        "date": "2026-10-13",
+        "predicted_cost": 2372.42,
+        "lower_bound": 1861.43,
+        "upper_bound": 2883.41
+      },
+      {
+        "day_offset": 20,
+        "date": "2026-10-14",
+        "predicted_cost": 2375.67,
+        "lower_bound": 1862.34,
+        "upper_bound": 2889.0
+      },
+      {
+        "day_offset": 21,
+        "date": "2026-10-15",
+        "predicted_cost": 2378.91,
+        "lower_bound": 1863.25,
+        "upper_bound": 2894.57
+      },
+      {
+        "day_offset": 22,
+        "date": "2026-10-16",
+        "predicted_cost": 2382.16,
+        "lower_bound": 1864.18,
+        "upper_bound": 2900.14
+      },
+      {
+        "day_offset": 23,
+        "date": "2026-10-17",
+        "predicted_cost": 2385.41,
+        "lower_bound": 1865.12,
+        "upper_bound": 2905.69
+      },
+      {
+        "day_offset": 24,
+        "date": "2026-10-18",
+        "predicted_cost": 2388.65,
+        "lower_bound": 1866.07,
+        "upper_bound": 2911.23
+      },
+      {
+        "day_offset": 25,
+        "date": "2026-10-19",
+        "predicted_cost": 2391.9,
+        "lower_bound": 1867.03,
+        "upper_bound": 2916.77
+      },
+      {
+        "day_offset": 26,
+        "date": "2026-10-20",
+        "predicted_cost": 2395.15,
+        "lower_bound": 1868.0,
+        "upper_bound": 2922.29
+      },
+      {
+        "day_offset": 27,
+        "date": "2026-10-21",
+        "predicted_cost": 2398.39,
+        "lower_bound": 1868.98,
+        "upper_bound": 2927.81
+      },
+      {
+        "day_offset": 28,
+        "date": "2026-10-22",
+        "predicted_cost": 2401.64,
+        "lower_bound": 1869.97,
+        "upper_bound": 2933.31
+      },
+      {
+        "day_offset": 29,
+        "date": "2026-10-23",
+        "predicted_cost": 2404.89,
+        "lower_bound": 1870.97,
+        "upper_bound": 2938.8
+      },
+      {
+        "day_offset": 30,
+        "date": "2026-10-24",
+        "predicted_cost": 2408.13,
+        "lower_bound": 1871.98,
+        "upper_bound": 2944.29
+      }
+    ],
+    "projected_total": 70831.65,
+    "projected_total_vs_baseline": 1228.45
+  },
+  "forecast_60": {
+    "horizon_days": 60,
+    "baseline_daily_cost": 2320.11,
+    "trend_direction": "stable",
+    "trend_percent_per_day": 0.248,
+    "points": [
+      {
+        "day_offset": 1,
+        "date": "2026-09-25",
+        "predicted_cost": 2313.98,
+        "lower_bound": 1847.08,
+        "upper_bound": 2780.87
+      },
+      {
+        "day_offset": 2,
+        "date": "2026-09-26",
+        "predicted_cost": 2317.22,
+        "lower_bound": 1847.77,
+        "upper_bound": 2786.68
+      },
+      {
+        "day_offset": 3,
+        "date": "2026-09-27",
+        "predicted_cost": 2320.47,
+        "lower_bound": 1848.47,
+        "upper_bound": 2792.47
+      },
+      {
+        "day_offset": 4,
+        "date": "2026-09-28",
+        "predicted_cost": 2323.72,
+        "lower_bound": 1849.19,
+        "upper_bound": 2798.25
+      },
+      {
+        "day_offset": 5,
+        "date": "2026-09-29",
+        "predicted_cost": 2326.96,
+        "lower_bound": 1849.91,
+        "upper_bound": 2804.01
+      },
+      {
+        "day_offset": 6,
+        "date": "2026-09-30",
+        "predicted_cost": 2330.21,
+        "lower_bound": 1850.66,
+        "upper_bound": 2809.76
+      },
+      {
+        "day_offset": 7,
+        "date": "2026-10-01",
+        "predicted_cost": 2333.46,
+        "lower_bound": 1851.41,
+        "upper_bound": 2815.5
+      },
+      {
+        "day_offset": 8,
+        "date": "2026-10-02",
+        "predicted_cost": 2336.7,
+        "lower_bound": 1852.18,
+        "upper_bound": 2821.23
+      },
+      {
+        "day_offset": 9,
+        "date": "2026-10-03",
+        "predicted_cost": 2339.95,
+        "lower_bound": 1852.96,
+        "upper_bound": 2826.94
+      },
+      {
+        "day_offset": 10,
+        "date": "2026-10-04",
+        "predicted_cost": 2343.2,
+        "lower_bound": 1853.76,
+        "upper_bound": 2832.64
+      },
+      {
+        "day_offset": 11,
+        "date": "2026-10-05",
+        "predicted_cost": 2346.44,
+        "lower_bound": 1854.56,
+        "upper_bound": 2838.33
+      },
+      {
+        "day_offset": 12,
+        "date": "2026-10-06",
+        "predicted_cost": 2349.69,
+        "lower_bound": 1855.38,
+        "upper_bound": 2844.0
+      },
+      {
+        "day_offset": 13,
+        "date": "2026-10-07",
+        "predicted_cost": 2352.94,
+        "lower_bound": 1856.21,
+        "upper_bound": 2849.67
+      },
+      {
+        "day_offset": 14,
+        "date": "2026-10-08",
+        "predicted_cost": 2356.18,
+        "lower_bound": 1857.05,
+        "upper_bound": 2855.32
+      },
+      {
+        "day_offset": 15,
+        "date": "2026-10-09",
+        "predicted_cost": 2359.43,
+        "lower_bound": 1857.9,
+        "upper_bound": 2860.96
+      },
+      {
+        "day_offset": 16,
+        "date": "2026-10-10",
+        "predicted_cost": 2362.68,
+        "lower_bound": 1858.77,
+        "upper_bound": 2866.59
+      },
+      {
+        "day_offset": 17,
+        "date": "2026-10-11",
+        "predicted_cost": 2365.93,
+        "lower_bound": 1859.64,
+        "upper_bound": 2872.21
+      },
+      {
+        "day_offset": 18,
+        "date": "2026-10-12",
+        "predicted_cost": 2369.17,
+        "lower_bound": 1860.53,
+        "upper_bound": 2877.81
+      },
+      {
+        "day_offset": 19,
+        "date": "2026-10-13",
+        "predicted_cost": 2372.42,
+        "lower_bound": 1861.43,
+        "upper_bound": 2883.41
+      },
+      {
+        "day_offset": 20,
+        "date": "2026-10-14",
+        "predicted_cost": 2375.67,
+        "lower_bound": 1862.34,
+        "upper_bound": 2889.0
+      },
+      {
+        "day_offset": 21,
+        "date": "2026-10-15",
+        "predicted_cost": 2378.91,
+        "lower_bound": 1863.25,
+        "upper_bound": 2894.57
+      },
+      {
+        "day_offset": 22,
+        "date": "2026-10-16",
+        "predicted_cost": 2382.16,
+        "lower_bound": 1864.18,
+        "upper_bound": 2900.14
+      },
+      {
+        "day_offset": 23,
+        "date": "2026-10-17",
+        "predicted_cost": 2385.41,
+        "lower_bound": 1865.12,
+        "upper_bound": 2905.69
+      },
+      {
+        "day_offset": 24,
+        "date": "2026-10-18",
+        "predicted_cost": 2388.65,
+        "lower_bound": 1866.07,
+        "upper_bound": 2911.23
+      },
+      {
+        "day_offset": 25,
+        "date": "2026-10-19",
+        "predicted_cost": 2391.9,
+        "lower_bound": 1867.03,
+        "upper_bound": 2916.77
+      },
+      {
+        "day_offset": 26,
+        "date": "2026-10-20",
+        "predicted_cost": 2395.15,
+        "lower_bound": 1868.0,
+        "upper_bound": 2922.29
+      },
+      {
+        "day_offset": 27,
+        "date": "2026-10-21",
+        "predicted_cost": 2398.39,
+        "lower_bound": 1868.98,
+        "upper_bound": 2927.81
+      },
+      {
+        "day_offset": 28,
+        "date": "2026-10-22",
+        "predicted_cost": 2401.64,
+        "lower_bound": 1869.97,
+        "upper_bound": 2933.31
+      },
+      {
+        "day_offset": 29,
+        "date": "2026-10-23",
+        "predicted_cost": 2404.89,
+        "lower_bound": 1870.97,
+        "upper_bound": 2938.8
+      },
+      {
+        "day_offset": 30,
+        "date": "2026-10-24",
+        "predicted_cost": 2408.13,
+        "lower_bound": 1871.98,
+        "upper_bound": 2944.29
+      },
+      {
+        "day_offset": 31,
+        "date": "2026-10-25",
+        "predicted_cost": 2411.38,
+        "lower_bound": 1873.0,
+        "upper_bound": 2949.77
+      },
+      {
+        "day_offset": 32,
+        "date": "2026-10-26",
+        "predicted_cost": 2414.63,
+        "lower_bound": 1874.02,
+        "upper_bound": 2955.23
+      },
+      {
+        "day_offset": 33,
+        "date": "2026-10-27",
+        "predicted_cost": 2417.87,
+        "lower_bound": 1875.06,
+        "upper_bound": 2960.69
+      },
+      {
+        "day_offset": 34,
+        "date": "2026-10-28",
+        "predicted_cost": 2421.12,
+        "lower_bound": 1876.1,
+        "upper_bound": 2966.14
+      },
+      {
+        "day_offset": 35,
+        "date": "2026-10-29",
+        "predicted_cost": 2424.37,
+        "lower_bound": 1877.16,
+        "upper_bound": 2971.58
+      },
+      {
+        "day_offset": 36,
+        "date": "2026-10-30",
+        "predicted_cost": 2427.62,
+        "lower_bound": 1878.22,
+        "upper_bound": 2977.01
+      },
+      {
+        "day_offset": 37,
+        "date": "2026-10-31",
+        "predicted_cost": 2430.86,
+        "lower_bound": 1879.29,
+        "upper_bound": 2982.43
+      },
+      {
+        "day_offset": 38,
+        "date": "2026-11-01",
+        "predicted_cost": 2434.11,
+        "lower_bound": 1880.37,
+        "upper_bound": 2987.85
+      },
+      {
+        "day_offset": 39,
+        "date": "2026-11-02",
+        "predicted_cost": 2437.36,
+        "lower_bound": 1881.46,
+        "upper_bound": 2993.25
+      },
+      {
+        "day_offset": 40,
+        "date": "2026-11-03",
+        "predicted_cost": 2440.6,
+        "lower_bound": 1882.55,
+        "upper_bound": 2998.65
+      },
+      {
+        "day_offset": 41,
+        "date": "2026-11-04",
+        "predicted_cost": 2443.85,
+        "lower_bound": 1883.66,
+        "upper_bound": 3004.04
+      },
+      {
+        "day_offset": 42,
+        "date": "2026-11-05",
+        "predicted_cost": 2447.1,
+        "lower_bound": 1884.77,
+        "upper_bound": 3009.42
+      },
+      {
+        "day_offset": 43,
+        "date": "2026-11-06",
+        "predicted_cost": 2450.34,
+        "lower_bound": 1885.89,
+        "upper_bound": 3014.79
+      },
+      {
+        "day_offset": 44,
+        "date": "2026-11-07",
+        "predicted_cost": 2453.59,
+        "lower_bound": 1887.02,
+        "upper_bound": 3020.16
+      },
+      {
+        "day_offset": 45,
+        "date": "2026-11-08",
+        "predicted_cost": 2456.84,
+        "lower_bound": 1888.16,
+        "upper_bound": 3025.52
+      },
+      {
+        "day_offset": 46,
+        "date": "2026-11-09",
+        "predicted_cost": 2460.08,
+        "lower_bound": 1889.3,
+        "upper_bound": 3030.87
+      },
+      {
+        "day_offset": 47,
+        "date": "2026-11-10",
+        "predicted_cost": 2463.33,
+        "lower_bound": 1890.45,
+        "upper_bound": 3036.21
+      },
+      {
+        "day_offset": 48,
+        "date": "2026-11-11",
+        "predicted_cost": 2466.58,
+        "lower_bound": 1891.61,
+        "upper_bound": 3041.54
+      },
+      {
+        "day_offset": 49,
+        "date": "2026-11-12",
+        "predicted_cost": 2469.82,
+        "lower_bound": 1892.78,
+        "upper_bound": 3046.87
+      },
+      {
+        "day_offset": 50,
+        "date": "2026-11-13",
+        "predicted_cost": 2473.07,
+        "lower_bound": 1893.96,
+        "upper_bound": 3052.19
+      },
+      {
+        "day_offset": 51,
+        "date": "2026-11-14",
+        "predicted_cost": 2476.32,
+        "lower_bound": 1895.14,
+        "upper_bound": 3057.5
+      },
+      {
+        "day_offset": 52,
+        "date": "2026-11-15",
+        "predicted_cost": 2479.56,
+        "lower_bound": 1896.33,
+        "upper_bound": 3062.8
+      },
+      {
+        "day_offset": 53,
+        "date": "2026-11-16",
+        "predicted_cost": 2482.81,
+        "lower_bound": 1897.53,
+        "upper_bound": 3068.1
+      },
+      {
+        "day_offset": 54,
+        "date": "2026-11-17",
+        "predicted_cost": 2486.06,
+        "lower_bound": 1898.73,
+        "upper_bound": 3073.39
+      },
+      {
+        "day_offset": 55,
+        "date": "2026-11-18",
+        "predicted_cost": 2489.31,
+        "lower_bound": 1899.94,
+        "upper_bound": 3078.67
+      },
+      {
+        "day_offset": 56,
+        "date": "2026-11-19",
+        "predicted_cost": 2492.55,
+        "lower_bound": 1901.16,
+        "upper_bound": 3083.95
+      },
+      {
+        "day_offset": 57,
+        "date": "2026-11-20",
+        "predicted_cost": 2495.8,
+        "lower_bound": 1902.38,
+        "upper_bound": 3089.22
+      },
+      {
+        "day_offset": 58,
+        "date": "2026-11-21",
+        "predicted_cost": 2499.05,
+        "lower_bound": 1903.61,
+        "upper_bound": 3094.48
+      },
+      {
+        "day_offset": 59,
+        "date": "2026-11-22",
+        "predicted_cost": 2502.29,
+        "lower_bound": 1904.85,
+        "upper_bound": 3099.73
+      },
+      {
+        "day_offset": 60,
+        "date": "2026-11-23",
+        "predicted_cost": 2505.54,
+        "lower_bound": 1906.1,
+        "upper_bound": 3104.98
+      }
+    ],
+    "projected_total": 144585.46,
+    "projected_total_vs_baseline": 5379.05
   },
   "forecast_90": {
     "horizon_days": 90,
-    "baseline_daily_cost": 1771.74,
-    "trend_direction": "increasing",
-    "trend_percent_per_day": 0.198,
-    "projected_total": 184291.60,
-    "projected_total_vs_baseline": 21542.60
+    "baseline_daily_cost": 2320.11,
+    "trend_direction": "stable",
+    "trend_percent_per_day": 0.248,
+    "points": [
+      {
+        "day_offset": 1,
+        "date": "2026-09-25",
+        "predicted_cost": 2313.98,
+        "lower_bound": 1847.08,
+        "upper_bound": 2780.87
+      },
+      {
+        "day_offset": 2,
+        "date": "2026-09-26",
+        "predicted_cost": 2317.22,
+        "lower_bound": 1847.77,
+        "upper_bound": 2786.68
+      },
+      {
+        "day_offset": 3,
+        "date": "2026-09-27",
+        "predicted_cost": 2320.47,
+        "lower_bound": 1848.47,
+        "upper_bound": 2792.47
+      },
+      {
+        "day_offset": 4,
+        "date": "2026-09-28",
+        "predicted_cost": 2323.72,
+        "lower_bound": 1849.19,
+        "upper_bound": 2798.25
+      },
+      {
+        "day_offset": 5,
+        "date": "2026-09-29",
+        "predicted_cost": 2326.96,
+        "lower_bound": 1849.91,
+        "upper_bound": 2804.01
+      },
+      {
+        "day_offset": 6,
+        "date": "2026-09-30",
+        "predicted_cost": 2330.21,
+        "lower_bound": 1850.66,
+        "upper_bound": 2809.76
+      },
+      {
+        "day_offset": 7,
+        "date": "2026-10-01",
+        "predicted_cost": 2333.46,
+        "lower_bound": 1851.41,
+        "upper_bound": 2815.5
+      },
+      {
+        "day_offset": 8,
+        "date": "2026-10-02",
+        "predicted_cost": 2336.7,
+        "lower_bound": 1852.18,
+        "upper_bound": 2821.23
+      },
+      {
+        "day_offset": 9,
+        "date": "2026-10-03",
+        "predicted_cost": 2339.95,
+        "lower_bound": 1852.96,
+        "upper_bound": 2826.94
+      },
+      {
+        "day_offset": 10,
+        "date": "2026-10-04",
+        "predicted_cost": 2343.2,
+        "lower_bound": 1853.76,
+        "upper_bound": 2832.64
+      },
+      {
+        "day_offset": 11,
+        "date": "2026-10-05",
+        "predicted_cost": 2346.44,
+        "lower_bound": 1854.56,
+        "upper_bound": 2838.33
+      },
+      {
+        "day_offset": 12,
+        "date": "2026-10-06",
+        "predicted_cost": 2349.69,
+        "lower_bound": 1855.38,
+        "upper_bound": 2844.0
+      },
+      {
+        "day_offset": 13,
+        "date": "2026-10-07",
+        "predicted_cost": 2352.94,
+        "lower_bound": 1856.21,
+        "upper_bound": 2849.67
+      },
+      {
+        "day_offset": 14,
+        "date": "2026-10-08",
+        "predicted_cost": 2356.18,
+        "lower_bound": 1857.05,
+        "upper_bound": 2855.32
+      },
+      {
+        "day_offset": 15,
+        "date": "2026-10-09",
+        "predicted_cost": 2359.43,
+        "lower_bound": 1857.9,
+        "upper_bound": 2860.96
+      },
+      {
+        "day_offset": 16,
+        "date": "2026-10-10",
+        "predicted_cost": 2362.68,
+        "lower_bound": 1858.77,
+        "upper_bound": 2866.59
+      },
+      {
+        "day_offset": 17,
+        "date": "2026-10-11",
+        "predicted_cost": 2365.93,
+        "lower_bound": 1859.64,
+        "upper_bound": 2872.21
+      },
+      {
+        "day_offset": 18,
+        "date": "2026-10-12",
+        "predicted_cost": 2369.17,
+        "lower_bound": 1860.53,
+        "upper_bound": 2877.81
+      },
+      {
+        "day_offset": 19,
+        "date": "2026-10-13",
+        "predicted_cost": 2372.42,
+        "lower_bound": 1861.43,
+        "upper_bound": 2883.41
+      },
+      {
+        "day_offset": 20,
+        "date": "2026-10-14",
+        "predicted_cost": 2375.67,
+        "lower_bound": 1862.34,
+        "upper_bound": 2889.0
+      },
+      {
+        "day_offset": 21,
+        "date": "2026-10-15",
+        "predicted_cost": 2378.91,
+        "lower_bound": 1863.25,
+        "upper_bound": 2894.57
+      },
+      {
+        "day_offset": 22,
+        "date": "2026-10-16",
+        "predicted_cost": 2382.16,
+        "lower_bound": 1864.18,
+        "upper_bound": 2900.14
+      },
+      {
+        "day_offset": 23,
+        "date": "2026-10-17",
+        "predicted_cost": 2385.41,
+        "lower_bound": 1865.12,
+        "upper_bound": 2905.69
+      },
+      {
+        "day_offset": 24,
+        "date": "2026-10-18",
+        "predicted_cost": 2388.65,
+        "lower_bound": 1866.07,
+        "upper_bound": 2911.23
+      },
+      {
+        "day_offset": 25,
+        "date": "2026-10-19",
+        "predicted_cost": 2391.9,
+        "lower_bound": 1867.03,
+        "upper_bound": 2916.77
+      },
+      {
+        "day_offset": 26,
+        "date": "2026-10-20",
+        "predicted_cost": 2395.15,
+        "lower_bound": 1868.0,
+        "upper_bound": 2922.29
+      },
+      {
+        "day_offset": 27,
+        "date": "2026-10-21",
+        "predicted_cost": 2398.39,
+        "lower_bound": 1868.98,
+        "upper_bound": 2927.81
+      },
+      {
+        "day_offset": 28,
+        "date": "2026-10-22",
+        "predicted_cost": 2401.64,
+        "lower_bound": 1869.97,
+        "upper_bound": 2933.31
+      },
+      {
+        "day_offset": 29,
+        "date": "2026-10-23",
+        "predicted_cost": 2404.89,
+        "lower_bound": 1870.97,
+        "upper_bound": 2938.8
+      },
+      {
+        "day_offset": 30,
+        "date": "2026-10-24",
+        "predicted_cost": 2408.13,
+        "lower_bound": 1871.98,
+        "upper_bound": 2944.29
+      },
+      {
+        "day_offset": 31,
+        "date": "2026-10-25",
+        "predicted_cost": 2411.38,
+        "lower_bound": 1873.0,
+        "upper_bound": 2949.77
+      },
+      {
+        "day_offset": 32,
+        "date": "2026-10-26",
+        "predicted_cost": 2414.63,
+        "lower_bound": 1874.02,
+        "upper_bound": 2955.23
+      },
+      {
+        "day_offset": 33,
+        "date": "2026-10-27",
+        "predicted_cost": 2417.87,
+        "lower_bound": 1875.06,
+        "upper_bound": 2960.69
+      },
+      {
+        "day_offset": 34,
+        "date": "2026-10-28",
+        "predicted_cost": 2421.12,
+        "lower_bound": 1876.1,
+        "upper_bound": 2966.14
+      },
+      {
+        "day_offset": 35,
+        "date": "2026-10-29",
+        "predicted_cost": 2424.37,
+        "lower_bound": 1877.16,
+        "upper_bound": 2971.58
+      },
+      {
+        "day_offset": 36,
+        "date": "2026-10-30",
+        "predicted_cost": 2427.62,
+        "lower_bound": 1878.22,
+        "upper_bound": 2977.01
+      },
+      {
+        "day_offset": 37,
+        "date": "2026-10-31",
+        "predicted_cost": 2430.86,
+        "lower_bound": 1879.29,
+        "upper_bound": 2982.43
+      },
+      {
+        "day_offset": 38,
+        "date": "2026-11-01",
+        "predicted_cost": 2434.11,
+        "lower_bound": 1880.37,
+        "upper_bound": 2987.85
+      },
+      {
+        "day_offset": 39,
+        "date": "2026-11-02",
+        "predicted_cost": 2437.36,
+        "lower_bound": 1881.46,
+        "upper_bound": 2993.25
+      },
+      {
+        "day_offset": 40,
+        "date": "2026-11-03",
+        "predicted_cost": 2440.6,
+        "lower_bound": 1882.55,
+        "upper_bound": 2998.65
+      },
+      {
+        "day_offset": 41,
+        "date": "2026-11-04",
+        "predicted_cost": 2443.85,
+        "lower_bound": 1883.66,
+        "upper_bound": 3004.04
+      },
+      {
+        "day_offset": 42,
+        "date": "2026-11-05",
+        "predicted_cost": 2447.1,
+        "lower_bound": 1884.77,
+        "upper_bound": 3009.42
+      },
+      {
+        "day_offset": 43,
+        "date": "2026-11-06",
+        "predicted_cost": 2450.34,
+        "lower_bound": 1885.89,
+        "upper_bound": 3014.79
+      },
+      {
+        "day_offset": 44,
+        "date": "2026-11-07",
+        "predicted_cost": 2453.59,
+        "lower_bound": 1887.02,
+        "upper_bound": 3020.16
+      },
+      {
+        "day_offset": 45,
+        "date": "2026-11-08",
+        "predicted_cost": 2456.84,
+        "lower_bound": 1888.16,
+        "upper_bound": 3025.52
+      },
+      {
+        "day_offset": 46,
+        "date": "2026-11-09",
+        "predicted_cost": 2460.08,
+        "lower_bound": 1889.3,
+        "upper_bound": 3030.87
+      },
+      {
+        "day_offset": 47,
+        "date": "2026-11-10",
+        "predicted_cost": 2463.33,
+        "lower_bound": 1890.45,
+        "upper_bound": 3036.21
+      },
+      {
+        "day_offset": 48,
+        "date": "2026-11-11",
+        "predicted_cost": 2466.58,
+        "lower_bound": 1891.61,
+        "upper_bound": 3041.54
+      },
+      {
+        "day_offset": 49,
+        "date": "2026-11-12",
+        "predicted_cost": 2469.82,
+        "lower_bound": 1892.78,
+        "upper_bound": 3046.87
+      },
+      {
+        "day_offset": 50,
+        "date": "2026-11-13",
+        "predicted_cost": 2473.07,
+        "lower_bound": 1893.96,
+        "upper_bound": 3052.19
+      },
+      {
+        "day_offset": 51,
+        "date": "2026-11-14",
+        "predicted_cost": 2476.32,
+        "lower_bound": 1895.14,
+        "upper_bound": 3057.5
+      },
+      {
+        "day_offset": 52,
+        "date": "2026-11-15",
+        "predicted_cost": 2479.56,
+        "lower_bound": 1896.33,
+        "upper_bound": 3062.8
+      },
+      {
+        "day_offset": 53,
+        "date": "2026-11-16",
+        "predicted_cost": 2482.81,
+        "lower_bound": 1897.53,
+        "upper_bound": 3068.1
+      },
+      {
+        "day_offset": 54,
+        "date": "2026-11-17",
+        "predicted_cost": 2486.06,
+        "lower_bound": 1898.73,
+        "upper_bound": 3073.39
+      },
+      {
+        "day_offset": 55,
+        "date": "2026-11-18",
+        "predicted_cost": 2489.31,
+        "lower_bound": 1899.94,
+        "upper_bound": 3078.67
+      },
+      {
+        "day_offset": 56,
+        "date": "2026-11-19",
+        "predicted_cost": 2492.55,
+        "lower_bound": 1901.16,
+        "upper_bound": 3083.95
+      },
+      {
+        "day_offset": 57,
+        "date": "2026-11-20",
+        "predicted_cost": 2495.8,
+        "lower_bound": 1902.38,
+        "upper_bound": 3089.22
+      },
+      {
+        "day_offset": 58,
+        "date": "2026-11-21",
+        "predicted_cost": 2499.05,
+        "lower_bound": 1903.61,
+        "upper_bound": 3094.48
+      },
+      {
+        "day_offset": 59,
+        "date": "2026-11-22",
+        "predicted_cost": 2502.29,
+        "lower_bound": 1904.85,
+        "upper_bound": 3099.73
+      },
+      {
+        "day_offset": 60,
+        "date": "2026-11-23",
+        "predicted_cost": 2505.54,
+        "lower_bound": 1906.1,
+        "upper_bound": 3104.98
+      },
+      {
+        "day_offset": 61,
+        "date": "2026-11-24",
+        "predicted_cost": 2508.79,
+        "lower_bound": 1907.35,
+        "upper_bound": 3110.22
+      },
+      {
+        "day_offset": 62,
+        "date": "2026-11-25",
+        "predicted_cost": 2512.03,
+        "lower_bound": 1908.61,
+        "upper_bound": 3115.46
+      },
+      {
+        "day_offset": 63,
+        "date": "2026-11-26",
+        "predicted_cost": 2515.28,
+        "lower_bound": 1909.87,
+        "upper_bound": 3120.69
+      },
+      {
+        "day_offset": 64,
+        "date": "2026-11-27",
+        "predicted_cost": 2518.53,
+        "lower_bound": 1911.15,
+        "upper_bound": 3125.91
+      },
+      {
+        "day_offset": 65,
+        "date": "2026-11-28",
+        "predicted_cost": 2521.77,
+        "lower_bound": 1912.42,
+        "upper_bound": 3131.12
+      },
+      {
+        "day_offset": 66,
+        "date": "2026-11-29",
+        "predicted_cost": 2525.02,
+        "lower_bound": 1913.71,
+        "upper_bound": 3136.33
+      },
+      {
+        "day_offset": 67,
+        "date": "2026-11-30",
+        "predicted_cost": 2528.27,
+        "lower_bound": 1915.0,
+        "upper_bound": 3141.54
+      },
+      {
+        "day_offset": 68,
+        "date": "2026-12-01",
+        "predicted_cost": 2531.51,
+        "lower_bound": 1916.3,
+        "upper_bound": 3146.73
+      },
+      {
+        "day_offset": 69,
+        "date": "2026-12-02",
+        "predicted_cost": 2534.76,
+        "lower_bound": 1917.6,
+        "upper_bound": 3151.92
+      },
+      {
+        "day_offset": 70,
+        "date": "2026-12-03",
+        "predicted_cost": 2538.01,
+        "lower_bound": 1918.91,
+        "upper_bound": 3157.11
+      },
+      {
+        "day_offset": 71,
+        "date": "2026-12-04",
+        "predicted_cost": 2541.25,
+        "lower_bound": 1920.22,
+        "upper_bound": 3162.29
+      },
+      {
+        "day_offset": 72,
+        "date": "2026-12-05",
+        "predicted_cost": 2544.5,
+        "lower_bound": 1921.54,
+        "upper_bound": 3167.46
+      },
+      {
+        "day_offset": 73,
+        "date": "2026-12-06",
+        "predicted_cost": 2547.75,
+        "lower_bound": 1922.87,
+        "upper_bound": 3172.63
+      },
+      {
+        "day_offset": 74,
+        "date": "2026-12-07",
+        "predicted_cost": 2551.0,
+        "lower_bound": 1924.2,
+        "upper_bound": 3177.79
+      },
+      {
+        "day_offset": 75,
+        "date": "2026-12-08",
+        "predicted_cost": 2554.24,
+        "lower_bound": 1925.54,
+        "upper_bound": 3182.94
+      },
+      {
+        "day_offset": 76,
+        "date": "2026-12-09",
+        "predicted_cost": 2557.49,
+        "lower_bound": 1926.89,
+        "upper_bound": 3188.09
+      },
+      {
+        "day_offset": 77,
+        "date": "2026-12-10",
+        "predicted_cost": 2560.74,
+        "lower_bound": 1928.24,
+        "upper_bound": 3193.23
+      },
+      {
+        "day_offset": 78,
+        "date": "2026-12-11",
+        "predicted_cost": 2563.98,
+        "lower_bound": 1929.59,
+        "upper_bound": 3198.37
+      },
+      {
+        "day_offset": 79,
+        "date": "2026-12-12",
+        "predicted_cost": 2567.23,
+        "lower_bound": 1930.96,
+        "upper_bound": 3203.5
+      },
+      {
+        "day_offset": 80,
+        "date": "2026-12-13",
+        "predicted_cost": 2570.48,
+        "lower_bound": 1932.32,
+        "upper_bound": 3208.63
+      },
+      {
+        "day_offset": 81,
+        "date": "2026-12-14",
+        "predicted_cost": 2573.72,
+        "lower_bound": 1933.7,
+        "upper_bound": 3213.75
+      },
+      {
+        "day_offset": 82,
+        "date": "2026-12-15",
+        "predicted_cost": 2576.97,
+        "lower_bound": 1935.07,
+        "upper_bound": 3218.87
+      },
+      {
+        "day_offset": 83,
+        "date": "2026-12-16",
+        "predicted_cost": 2580.22,
+        "lower_bound": 1936.46,
+        "upper_bound": 3223.98
+      },
+      {
+        "day_offset": 84,
+        "date": "2026-12-17",
+        "predicted_cost": 2583.46,
+        "lower_bound": 1937.85,
+        "upper_bound": 3229.08
+      },
+      {
+        "day_offset": 85,
+        "date": "2026-12-18",
+        "predicted_cost": 2586.71,
+        "lower_bound": 1939.24,
+        "upper_bound": 3234.18
+      },
+      {
+        "day_offset": 86,
+        "date": "2026-12-19",
+        "predicted_cost": 2589.96,
+        "lower_bound": 1940.64,
+        "upper_bound": 3239.27
+      },
+      {
+        "day_offset": 87,
+        "date": "2026-12-20",
+        "predicted_cost": 2593.2,
+        "lower_bound": 1942.05,
+        "upper_bound": 3244.36
+      },
+      {
+        "day_offset": 88,
+        "date": "2026-12-21",
+        "predicted_cost": 2596.45,
+        "lower_bound": 1943.46,
+        "upper_bound": 3249.45
+      },
+      {
+        "day_offset": 89,
+        "date": "2026-12-22",
+        "predicted_cost": 2599.7,
+        "lower_bound": 1944.87,
+        "upper_bound": 3254.53
+      },
+      {
+        "day_offset": 90,
+        "date": "2026-12-23",
+        "predicted_cost": 2602.94,
+        "lower_bound": 1946.29,
+        "upper_bound": 3259.6
+      }
+    ],
+    "projected_total": 221261.42,
+    "projected_total_vs_baseline": 12451.81
   },
   "recommendations": [
     {
@@ -27,28 +1301,170 @@
       "category": "reserved_instance",
       "severity": "high",
       "title": "Reserved Instance candidate: Microsoft.Sql",
-      "description": "Microsoft.Sql shows highly predictable usage (CV 2.0%) over 90 days. A 1-year Reserved Instance could reduce cost by 35%.",
-      "estimated_monthly_saving": 3591.00,
+      "description": "Microsoft.Sql shows highly predictable usage (coefficient of variation 1.9%) over 90 days. A 1-year Reserved Instance or Savings Plan commitment could reduce this cost by approximately 35%.",
+      "estimated_monthly_saving": 3596.09,
       "estimated_saving_percent": 35.0
+    },
+    {
+      "service": "Microsoft.Web",
+      "category": "reserved_instance",
+      "severity": "high",
+      "title": "Reserved Instance candidate: Microsoft.Web",
+      "description": "Microsoft.Web shows highly predictable usage (coefficient of variation 10.8%) over 90 days. A 1-year Reserved Instance or Savings Plan commitment could reduce this cost by approximately 35%.",
+      "estimated_monthly_saving": 1902.33,
+      "estimated_saving_percent": 35.0
+    },
+    {
+      "service": "Microsoft.Compute",
+      "category": "anomaly",
+      "severity": "high",
+      "title": "Cost spike detected: Microsoft.Compute",
+      "description": "Microsoft.Compute had 1 cost spike(s) exceeding mean + 2.5 standard deviations (latest: 2026-08-28). Average spike excess: 3399.71 per day. Investigate for runaway workloads, misconfigured autoscaling, or unexpected data transfer events.",
+      "estimated_monthly_saving": 1133.24,
+      "estimated_saving_percent": 241.9
     },
     {
       "service": "Microsoft.Storage",
       "category": "reserved_instance",
       "severity": "high",
       "title": "Reserved Instance candidate: Microsoft.Storage",
-      "description": "Microsoft.Storage shows highly predictable usage (CV 4.6%) over 90 days. A 1-year Reserved Instance could reduce cost by 35%.",
-      "estimated_monthly_saving": 923.00,
+      "description": "Microsoft.Storage shows highly predictable usage (coefficient of variation 4.7%) over 90 days. A 1-year Reserved Instance or Savings Plan commitment could reduce this cost by approximately 35%.",
+      "estimated_monthly_saving": 924.26,
+      "estimated_saving_percent": 35.0
+    },
+    {
+      "service": "Microsoft.Monitor",
+      "category": "reserved_instance",
+      "severity": "high",
+      "title": "Reserved Instance candidate: Microsoft.Monitor",
+      "description": "Microsoft.Monitor shows highly predictable usage (coefficient of variation 6.4%) over 90 days. A 1-year Reserved Instance or Savings Plan commitment could reduce this cost by approximately 35%.",
+      "estimated_monthly_saving": 481.75,
       "estimated_saving_percent": 35.0
     },
     {
       "service": "Microsoft.Compute",
+      "category": "rightsizing",
+      "severity": "medium",
+      "title": "Growing cost: Microsoft.Compute",
+      "description": "Microsoft.Compute is growing at 0.4% of its average daily cost per day. Without intervention this will add approximately 160 per month. Review resource scaling policies, autoscaling upper limits, and provisioned capacity that is not actively consumed.",
+      "estimated_monthly_saving": 48.1,
+      "estimated_saving_percent": 30.0
+    },
+    {
+      "service": "Microsoft.Web",
+      "category": "anomaly",
+      "severity": "high",
+      "title": "Cost spike detected: Microsoft.Web",
+      "description": "Microsoft.Web had 1 cost spike(s) exceeding mean + 2.5 standard deviations (latest: 2026-09-20). Average spike excess: 56.81 per day. Investigate for runaway workloads, misconfigured autoscaling, or unexpected data transfer events.",
+      "estimated_monthly_saving": 18.94,
+      "estimated_saving_percent": 31.4
+    },
+    {
+      "service": "Microsoft.Network",
+      "category": "anomaly",
+      "severity": "high",
+      "title": "Cost spike detected: Microsoft.Network",
+      "description": "Microsoft.Network had 1 cost spike(s) exceeding mean + 2.5 standard deviations (latest: 2026-07-27). Average spike excess: 55.51 per day. Investigate for runaway workloads, misconfigured autoscaling, or unexpected data transfer events.",
+      "estimated_monthly_saving": 18.5,
+      "estimated_saving_percent": 182.3
+    },
+    {
+      "service": "Microsoft.Web",
+      "category": "rightsizing",
+      "severity": "medium",
+      "title": "Growing cost: Microsoft.Web",
+      "description": "Microsoft.Web is growing at 0.3% of its average daily cost per day. Without intervention this will add approximately 17 per month. Review resource scaling policies, autoscaling upper limits, and provisioned capacity that is not actively consumed.",
+      "estimated_monthly_saving": 5.02,
+      "estimated_saving_percent": 30.0
+    },
+    {
+      "service": "Microsoft.Storage",
       "category": "anomaly",
       "severity": "medium",
-      "title": "Cost spike detected: Microsoft.Compute",
-      "description": "1 cost spike exceeding mean + 2.5 standard deviations detected. Investigate for runaway workloads or misconfigured autoscaling.",
-      "estimated_monthly_saving": 1834.80,
-      "estimated_saving_percent": 78.0
+      "title": "Cost spike detected: Microsoft.Storage",
+      "description": "Microsoft.Storage had 1 cost spike(s) exceeding mean + 2.5 standard deviations (latest: 2026-08-02). Average spike excess: 13.30 per day. Investigate for runaway workloads, misconfigured autoscaling, or unexpected data transfer events.",
+      "estimated_monthly_saving": 4.43,
+      "estimated_saving_percent": 15.1
     }
   ],
-  "total_estimated_monthly_saving": 7124.80
+  "total_estimated_monthly_saving": 8132.66,
+  "anomalies": [
+    {
+      "date": "2026-08-28",
+      "cost": 5504.28,
+      "z_score": 8.68
+    }
+  ],
+  "trends": [
+    {
+      "dimension": "service",
+      "name": "Microsoft.Compute",
+      "direction": "increasing",
+      "percent_per_day": 0.38,
+      "average_daily_cost": 1405.47
+    },
+    {
+      "dimension": "resource_group",
+      "name": "rg-app",
+      "direction": "increasing",
+      "percent_per_day": 0.372,
+      "average_daily_cost": 1586.65
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.Web",
+      "direction": "increasing",
+      "percent_per_day": 0.308,
+      "average_daily_cost": 181.17
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.Monitor",
+      "direction": "stable",
+      "percent_per_day": 0.011,
+      "average_daily_cost": 45.88
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.KeyVault",
+      "direction": "stable",
+      "percent_per_day": 0.003,
+      "average_daily_cost": 5.19
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.Sql",
+      "direction": "stable",
+      "percent_per_day": -0.006,
+      "average_daily_cost": 342.49
+    },
+    {
+      "dimension": "resource_group",
+      "name": "rg-data",
+      "direction": "stable",
+      "percent_per_day": -0.015,
+      "average_daily_cost": 430.51
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.Storage",
+      "direction": "stable",
+      "percent_per_day": -0.052,
+      "average_daily_cost": 88.02
+    },
+    {
+      "dimension": "resource_group",
+      "name": "rg-shared",
+      "direction": "stable",
+      "percent_per_day": -0.103,
+      "average_daily_cost": 81.53
+    },
+    {
+      "dimension": "service",
+      "name": "Microsoft.Network",
+      "direction": "stable",
+      "percent_per_day": -0.292,
+      "average_daily_cost": 30.46
+    }
+  ]
 }

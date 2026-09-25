@@ -81,6 +81,16 @@ while catching genuine spikes.
 The baseline daily cost is the arithmetic mean of the most recent 30 days (or all available
 days if fewer than 30 are provided). It is used for:
 
-- Trend direction classification (stable: change below 0.5% per day)
+- Trend direction classification of the total (stable: change below 0.5% per day)
 - The vs-baseline delta in forecast output
 - Reserved Instance saving estimates (baseline * 30 * 0.35)
+
+## Trends per Service and Resource Group
+
+Each service and each resource group gets its own least-squares line over the full history, with days without cost counted as 0. The slope is expressed as a share of that series' average daily cost:
+
+- **increasing**: more than +0.25% per day (about 7.5% a month)
+- **decreasing**: less than -0.25% per day
+- **stable**: anything in between, or a slope whose t-statistic is below 2
+
+The t-statistic check matters because a line fitted to pure day-to-day noise is never exactly flat. Without it, a service that merely fluctuates would be reported as trending. The same threshold and check drive the `rightsizing` recommendation.

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0] - 2026-09-25
+
+### Added
+
+- Trends per service and per resource group, in every output format. The README had promised both ("which resource group is trending in the wrong direction", "classifies each service"), but only the subscription total got a trend. A slope counts only when its t-statistic reaches 2, so services that merely fluctuate stay "stable".
+- JSON, Markdown and HTML reports now list the anomaly days. Until now only the terminal table showed them.
+- The demo spreads its services over three resource groups, so the new view has something to show.
+
+### Fixed
+
+- Live mode read no costs. The client asked the Consumption UsageDetails API (api-version 2023-03-01) for `pretaxCost`, a field that version no longer returns, so every record came in at 0; its date filter on `usageStart` is also not supported there. The client now uses the Azure Cost Management Query API, which Microsoft recommends because it is retiring UsageDetails. It returns daily cost per service and resource group directly, follows every result page and waits when Azure throttles. The required role stays Cost Management Reader.
+- Rightsizing never fired. The threshold of 1.5% growth per day means doubling within about 50 days; it is now 0.25% per day (about 7.5% a month) with the same significance check as the trends.
+- A cost spike could be reported with the wrong date when a service had days without cost, because its series was shorter than the calendar.
+- A subscription with less than a week of history, or a rejected Azure request, ended in a Python traceback. Both now print one line and exit with code 1.
+- The versions were out of step: `pyproject.toml` said 1.0.8 and `acfe.__version__` 1.0.0. Both now say 1.1.0.
+
+---
+
 ## [1.0.9] - 2026-08-04
 
 ### Fixed

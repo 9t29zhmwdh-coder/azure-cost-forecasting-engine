@@ -50,16 +50,16 @@ eingebaut. Hier geht es ums Planungsgespräch, nicht um den Pager.
 
 | Funktion | Beschreibung |
 |---|---|
-| Datenabfrage | Tagesaktuelle Verbrauchsdaten aus der Azure Consumption API mit automatischer Seitennavigation |
-| Normalisierung | Aggregation nach Dienst und Tag, lückenlose Zeitreihe |
+| Datenabfrage | Tageskosten pro Dienst und Ressourcengruppe aus der Azure Cost Management Query API, liest alle Ergebnisseiten und wartet, wenn Azure drosselt |
+| Normalisierung | Aggregation nach Dienst, Ressourcengruppe und Tag, lückenlose Zeitreihe |
 | Kostenprognose | Ensemble aus linearer Regression und Holt-Glättung (30/60/90 Tage) |
 | Anomalieerkennung | Tage, die den Mittelwert um mehr als 2,5 Standardabweichungen überschreiten |
-| Trendanalyse | Klassifikation in stabil, steigend oder sinkend |
+| Trendanalyse | Jeder Dienst und jede Ressourcengruppe als stabil, steigend oder sinkend. Eine Steigung zählt nur, wenn sie sich vom täglichen Rauschen abhebt (t-Wert ab 2) |
 | Reserved Instances | Dienste mit stabilem Verbrauch (CV unter 15%) als RI-Kandidaten |
-| Rightsizing | Dienste mit täglich steigenden Kosten über 1,5% des Mittels |
+| Rightsizing | Dienste, deren Kosten täglich um mehr als 0,25% ihres Mittels wachsen, etwa 7,5% im Monat |
 | Prognosebandbreiten | 80%-Konfidenzintervalle für alle Prognosepunkte |
 | Demo-Modus | Vollständige Analyse mit synthetischen Daten ohne Azure-Zugangsdaten |
-| Ausgabeformate | Tabelle, JSON, Markdown, HTML |
+| Ausgabeformate | Tabelle, JSON, Markdown, HTML, jeweils mit Prognose, Anomalien, Trends und Empfehlungen |
 
 ---
 
@@ -71,7 +71,7 @@ Registriere eine Anwendung in Entra ID und weise ihr folgende Rolle auf Abonneme
 |---|---|
 | `Cost Management Reader` | Lesezugriff auf Verbrauchsdetails und Abrechnungsdaten |
 
-Keine Schreibberechtigungen erforderlich oder genutzt. Alle API-Aufrufe sind GET-Requests an die Azure Consumption API.
+Keine Schreibberechtigungen erforderlich oder genutzt. Das Tool schickt eine reine Leseabfrage an die [Azure Cost Management Query API](https://learn.microsoft.com/de-de/rest/api/cost-management/query/usage) und liest deren Ergebnisseiten. Die Abfrage geht als POST raus, weil Azure die Abfragedefinition im Request-Body erwartet; sie ändert nichts. Die ältere Consumption-UsageDetails-API will Microsoft abschalten und empfiehlt stattdessen Cost Management.
 
 ---
 
@@ -138,7 +138,7 @@ Keine externen Bibliotheken für Zahlenrechnung nötig. Alle Berechnungen mit de
 |---|---|---|
 | `reserved_instance` | Variationskoeffizient unter 15% über mindestens 14 Tage | 30-40% |
 | `anomaly` | Tageskosten über Mittelwert + 2,5 Standardabweichungen | Variabel |
-| `rightsizing` | Tägliche Kostenwachstumsrate über 1,5% des Mittelwerts pro Tag | 25-35% |
+| `rightsizing` | Tägliches Kostenwachstum über 0,25% des Mittelwerts, statistisch gesichert | 25-35% |
 
 Empfehlungen sind absteigend nach geschätzter monatlicher Ersparnis sortiert.
 

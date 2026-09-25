@@ -17,6 +17,16 @@ _SERVICES: dict[str, dict] = {
     "Microsoft.KeyVault": {"base": 5.2, "growth_per_day": 0.0, "noise_std": 0.5},
 }
 
+_RESOURCE_GROUPS: dict[str, str] = {
+    "Microsoft.Compute": "rg-app",
+    "Microsoft.Web": "rg-app",
+    "Microsoft.Sql": "rg-data",
+    "Microsoft.Storage": "rg-data",
+    "Microsoft.Network": "rg-shared",
+    "Microsoft.Monitor": "rg-shared",
+    "Microsoft.KeyVault": "rg-shared",
+}
+
 _ANOMALY_DAY_OFFSET = 62
 _ANOMALY_SERVICE = "Microsoft.Compute"
 _ANOMALY_MULTIPLIER = 3.4
@@ -30,6 +40,7 @@ def generate(days: int = 90, seed: int = 42) -> list[UsageRecord]:
     - Two growing services (rightsizing): Compute, Web
     - One anomaly spike on day 62: Compute
     - Variable network costs
+    - Three resource groups, of which rg-app grows with its services
     """
     random.seed(seed)
     records: list[UsageRecord] = []
@@ -49,7 +60,7 @@ def generate(days: int = 90, seed: int = 42) -> list[UsageRecord]:
                 UsageRecord(
                     date=day,
                     service_name=service,
-                    resource_group="rg-production",
+                    resource_group=_RESOURCE_GROUPS[service],
                     cost=round(cost, 4),
                     currency="USD",
                     quantity=round(cost / 10, 2),

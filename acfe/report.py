@@ -37,6 +37,8 @@ def to_markdown(report: CostReport) -> str:
             f"{fr.trend_direction} ({fr.trend_percent_per_day:+.3f}%/day) |\n"
         )
 
+    md.append(_markdown_anomalies_and_trends(report))
+
     md.append("---\n\n## Cost Optimization Recommendations\n")
     if not report.recommendations:
         md.append("No optimization opportunities identified.\n")
@@ -68,6 +70,26 @@ def to_markdown(report: CostReport) -> str:
     return "".join(md)
 
 
+def _markdown_anomalies_and_trends(report: CostReport) -> str:
+    md = ["---\n\n## Anomalies\n"]
+    if not report.anomalies:
+        md.append("No day broke from the usual spend pattern.\n")
+    else:
+        md.append("| Date | Cost | z-score |\n|---|---|---|\n")
+        md.extend(f"| {a.date} | {a.cost:.2f} | {a.z_score:.1f} |\n" for a in report.anomalies)
+    md.append("\n---\n\n## Trends by Service and Resource Group\n")
+    md.append("| Type | Name | Trend | Change per day | Avg daily cost |\n|---|---|---|---|---|\n")
+    md.extend(
+        f"| {_DIMENSION_LABEL[t.dimension]} | {t.name} | {t.direction} | "
+        f"{t.percent_per_day:+.2f}% | {t.average_daily_cost:.2f} |\n"
+        for t in report.trends
+    )
+    return "".join(md) + "\n"
+
+
+_DIMENSION_LABEL = {"service": "Service", "resource_group": "Resource group"}
+
+
 def to_html(report: CostReport) -> str:
     rec_rows = "".join(
         f"<tr><td>{'🔴' if r.severity == 'high' else '🟡'} {r.severity.upper()}</td>"
@@ -81,6 +103,16 @@ def to_html(report: CostReport) -> str:
         f"<td>{fr.projected_total_vs_baseline:+.2f}</td>"
         f"<td>{fr.trend_direction}</td></tr>\n"
         for fr in [report.forecast_30, report.forecast_60, report.forecast_90]
+    )
+    anomaly_rows = "".join(
+        f"<tr><td>{_esc(a.date)}</td><td>{a.cost:.2f}</td><td>{a.z_score:.1f}</td></tr>\n"
+        for a in report.anomalies
+    )
+    trend_rows = "".join(
+        f"<tr><td>{_DIMENSION_LABEL[t.dimension]}</td><td>{_esc(t.name)}</td>"
+        f"<td>{t.direction}</td><td>{t.percent_per_day:+.2f}%</td>"
+        f"<td>{t.average_daily_cost:.2f}</td></tr>\n"
+        for t in report.trends
     )
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -101,6 +133,12 @@ tr:hover{{background:#f9f9f9}}.saving{{color:#107c10;font-weight:bold}}</style><
 <h2>Cost Forecast</h2>
 <table><tr><th>Horizon</th><th>Projected Total</th><th>vs. Baseline</th><th>Trend</th></tr>
 {forecast_rows}</table>
+<h2>Anomalies</h2>
+<table><tr><th>Date</th><th>Cost</th><th>z-score</th></tr>
+{anomaly_rows}</table>
+<h2>Trends by Service and Resource Group</h2>
+<table><tr><th>Type</th><th>Name</th><th>Trend</th><th>Change per day</th><th>Avg daily cost</th></tr>
+{trend_rows}</table>
 <h2>Optimization Recommendations</h2>
 <p class="saving">Total estimated monthly saving: {report.total_estimated_monthly_saving:.2f}</p>
 <table><tr><th>Severity</th><th>Category</th><th>Service</th><th>Monthly Saving</th><th>Title</th></tr>

@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -18,6 +18,7 @@ class DailyCost:
     total_cost: float
     by_service: dict[str, float]
     currency: str
+    by_resource_group: dict[str, float] = field(default_factory=dict)
 
 
 @dataclass
@@ -52,6 +53,22 @@ class Recommendation:
 
 
 @dataclass
+class Anomaly:
+    date: str
+    cost: float
+    z_score: float
+
+
+@dataclass
+class Trend:
+    dimension: str  # "service" or "resource_group"
+    name: str
+    direction: str  # "increasing", "decreasing" or "stable"
+    percent_per_day: float
+    average_daily_cost: float
+
+
+@dataclass
 class CostReport:
     generated_at: str
     subscription_id: str
@@ -64,3 +81,5 @@ class CostReport:
     forecast_90: ForecastResult
     recommendations: list[Recommendation]
     total_estimated_monthly_saving: float
+    anomalies: list[Anomaly] = field(default_factory=list)
+    trends: list[Trend] = field(default_factory=list)
