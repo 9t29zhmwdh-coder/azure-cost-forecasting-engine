@@ -7,13 +7,19 @@ from .models import DailyCost, UsageRecord
 
 
 def normalize(records: list[UsageRecord]) -> list[DailyCost]:
-    """Aggregate usage records into daily totals per service, sorted by date."""
+    """Aggregate usage records into daily totals per service and resource group, by date."""
     by_date: dict[str, dict] = defaultdict(
-        lambda: {"total": 0.0, "services": defaultdict(float), "currency": "USD"}
+        lambda: {
+            "total": 0.0,
+            "services": defaultdict(float),
+            "groups": defaultdict(float),
+            "currency": "USD",
+        }
     )
     for r in records:
         by_date[r.date]["total"] += r.cost
         by_date[r.date]["services"][r.service_name] += r.cost
+        by_date[r.date]["groups"][r.resource_group or "(none)"] += r.cost
         by_date[r.date]["currency"] = r.currency
 
     result = []
@@ -25,6 +31,7 @@ def normalize(records: list[UsageRecord]) -> list[DailyCost]:
                 total_cost=round(d["total"], 4),
                 by_service={k: round(v, 4) for k, v in d["services"].items()},
                 currency=d["currency"],
+                by_resource_group={k: round(v, 4) for k, v in d["groups"].items()},
             )
         )
     return result

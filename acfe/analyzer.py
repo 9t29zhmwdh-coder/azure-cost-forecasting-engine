@@ -3,12 +3,17 @@
 from __future__ import annotations
 
 import math
-from collections import defaultdict
 
-from .models import DailyCost, ForecastResult, Recommendation
+from .models import DailyCost, ForecastResult, Recommendation, Trend
 
 _MIN_DAILY_COST_THRESHOLD = 10.0
 _MIN_DATA_DAYS = 14
+# Linear growth as a share of the average daily cost. 0.25% a day adds roughly
+# 7.5% a month; the earlier 1.5% meant doubling within about 50 days and so
+# never fired on real spend.
+_GROWTH_PCT_PER_DAY = 0.25
+# Roughly 95% confidence that the slope is not noise.
+_MIN_TREND_T_STAT = 2.0
 
 
 def analyze(
@@ -33,11 +38,66 @@ def analyze(
 
 
 def _service_daily_costs(daily_costs: list[DailyCost]) -> dict[str, list[float]]:
-    costs: dict[str, list[float]] = defaultdict(list)
-    for day in daily_costs:
-        for service, cost in day.by_service.items():
-            costs[service].append(cost)
-    return dict(costs)
+    """One value per day for every service, 0 where it had no cost.
+
+    Keeping the series aligned with `daily_costs` makes index i the same date
+    for every service, which the anomaly date and the growth slope rely on.
+    """
+    return _aligned_series(daily_costs, lambda day: day.by_service)
+
+
+def _aligned_series(daily_costs: list[DailyCost], values_of) -> dict[str, list[float]]:
+    names = {name for day in daily_costs for name in values_of(day)}
+    return {name: [values_of(day).get(name, 0.0) for day in daily_costs] for name in names}
+
+
+def _fit(costs: list[float]) -> tuple[float, float]:
+    """Least-squares slope and its t-statistic.
+
+    Daily cost is noisy, and a slope fitted to pure noise is never exactly 0;
+    the t-statistic tells a real trend from a line through the scatter.
+    """
+    n = len(costs)
+    mean_x = (n - 1) / 2
+    mean_y = sum(costs) / n
+    var_x = sum((i - mean_x) ** 2 for i in range(n))
+    if n < 3 or var_x == 0:
+        return 0.0, 0.0
+    slope = sum((i - mean_x) * (costs[i] - mean_y) for i in range(n)) / var_x
+    intercept = mean_y - slope * mean_x
+    residual = sum((costs[i] - intercept - slope * i) ** 2 for i in range(n))
+    std_error = math.sqrt(residual / (n - 2) / var_x)
+    return slope, (slope / std_error if std_error > 0 else math.inf)
+
+
+def _direction(percent_per_day: float) -> str:
+    if percent_per_day > _GROWTH_PCT_PER_DAY:
+        return "increasing"
+    if percent_per_day < -_GROWTH_PCT_PER_DAY:
+        return "decreasing"
+    return "stable"
+
+
+def _is_significant(t_stat: float) -> bool:
+    return abs(t_stat) >= _MIN_TREND_T_STAT
+
+
+def analyze_trends(daily_costs: list[DailyCost]) -> list[Trend]:
+    """Trend per service and per resource group, fastest growing first."""
+    trends = []
+    for dimension, values_of in (
+        ("service", lambda day: day.by_service),
+        ("resource_group", lambda day: day.by_resource_group),
+    ):
+        for name, costs in _aligned_series(daily_costs, values_of).items():
+            mean = sum(costs) / len(costs)
+            if len(costs) < _MIN_DATA_DAYS or mean <= 0:
+                continue
+            slope, t_stat = _fit(costs)
+            pct = slope / mean * 100
+            direction = _direction(pct) if _is_significant(t_stat) else "stable"
+            trends.append(Trend(dimension, name, direction, round(pct, 3), round(mean, 2)))
+    return sorted(trends, key=lambda t: t.percent_per_day, reverse=True)
 
 
 def _detect_ri_candidates(daily_costs: list[DailyCost]) -> list[Recommendation]:
@@ -93,10 +153,8 @@ def _detect_anomalies(daily_costs: list[DailyCost]) -> list[Recommendation]:
 
         avg_excess = sum(c - mean for _, c in spike_days) / len(spike_days)
         monthly_saving = avg_excess * (len(spike_days) / len(costs)) * 30
-        latest_idx, latest_cost = spike_days[-1]
-        date_hint = ""
-        if latest_idx < len(daily_costs):
-            date_hint = f" (latest: {daily_costs[latest_idx].date})"
+        latest_idx, _ = spike_days[-1]
+        date_hint = f" (latest: {daily_costs[latest_idx].date})"
 
         recs.append(
             Recommendation(
@@ -121,30 +179,26 @@ def _detect_anomalies(daily_costs: list[DailyCost]) -> list[Recommendation]:
 def _detect_growing_services(
     daily_costs: list[DailyCost], forecast_result: ForecastResult
 ) -> list[Recommendation]:
-    """Services with a daily cost growth rate above 1.5% of their mean."""
+    """Services whose cost grows by more than _GROWTH_PCT_PER_DAY of their mean per day."""
     recs = []
     for service, costs in _service_daily_costs(daily_costs).items():
         if len(costs) < _MIN_DATA_DAYS:
             continue
-        n = len(costs)
-        mean = sum(costs) / n
+        mean = sum(costs) / len(costs)
         if mean < _MIN_DAILY_COST_THRESHOLD:
             continue
 
-        mean_x = (n - 1) / 2
-        cov_xy = sum((i - mean_x) * (costs[i] - mean) for i in range(n))
-        var_x = sum((i - mean_x) ** 2 for i in range(n))
-        slope = cov_xy / var_x if var_x > 0 else 0.0
-        slope_pct = slope / mean * 100 if mean > 0 else 0.0
+        slope, t_stat = _fit(costs)
+        slope_pct = slope / mean * 100
 
-        if slope_pct > 1.5 and mean > _MIN_DAILY_COST_THRESHOLD:
+        if slope_pct > _GROWTH_PCT_PER_DAY and _is_significant(t_stat):
             monthly_impact = slope * 30
             recs.append(
                 Recommendation(
                     service=service,
                     category="rightsizing",
                     severity="high" if monthly_impact > 200 else "medium",
-                    title=f"Rapidly growing cost: {service}",
+                    title=f"Growing cost: {service}",
                     description=(
                         f"{service} is growing at {slope_pct:.1f}% of its average daily cost per day. "
                         f"Without intervention this will add approximately {monthly_impact:.0f} "

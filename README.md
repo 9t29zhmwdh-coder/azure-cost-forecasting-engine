@@ -50,16 +50,16 @@ planning conversation, not the pager.
 
 | Capability | Description |
 |---|---|
-| Usage data ingestion | Fetches daily cost data from Azure Consumption API with automatic pagination |
-| Usage normalization | Aggregates raw records into daily totals per service, fills missing days |
+| Usage data ingestion | Fetches daily cost per service and resource group from the Azure Cost Management Query API, following every result page and backing off when Azure throttles |
+| Usage normalization | Aggregates raw records into daily totals per service and resource group, fills missing days |
 | Cost forecasting | Ensemble of linear regression and Holt exponential smoothing (30/60/90 days) |
 | Anomaly detection | Flags days exceeding mean + 2.5 standard deviations |
-| Trend analysis | Classifies each service as stable, increasing or decreasing |
+| Trend analysis | Classifies each service and each resource group as stable, increasing or decreasing. A slope only counts when it stands out from the day-to-day noise (t-statistic of at least 2) |
 | RI/Savings Plan detection | Identifies services with stable usage (CV below 15%) as Reserved Instance candidates |
-| Rightsizing detection | Flags services with daily cost growth above 1.5% of mean |
+| Rightsizing detection | Flags services whose cost grows by more than 0.25% of their average per day, about 7.5% a month |
 | Prediction intervals | 80% confidence bands for all forecast points |
 | Demo mode | Full pipeline runs on synthetic data without any Azure credentials |
-| Output formats | Table, JSON, Markdown, HTML |
+| Output formats | Table, JSON, Markdown, HTML, each with forecast, anomalies, trends and recommendations |
 
 ---
 
@@ -71,7 +71,7 @@ Register an application in Entra ID and assign the following role at subscriptio
 |---|---|
 | `Cost Management Reader` | Read-only access to usage details and billing data |
 
-No write permissions are required or used. All API calls are GET requests to the Azure Consumption API.
+No write permissions are required or used. The tool sends one read-only query to the [Azure Cost Management Query API](https://learn.microsoft.com/en-us/rest/api/cost-management/query/usage) and reads its result pages. The query goes out as a POST because Azure expects the query definition in the request body; it changes nothing. Microsoft plans to retire the older Consumption UsageDetails API and recommends Cost Management instead.
 
 ---
 
@@ -138,7 +138,7 @@ No external numerical libraries are required. All forecasting math is implemente
 |---|---|---|
 | `reserved_instance` | Coefficient of variation below 15% over 14+ days | 30-40% |
 | `anomaly` | Daily cost exceeds mean + 2.5 standard deviations | Variable |
-| `rightsizing` | Daily cost growth rate above 1.5% of mean per day | 25-35% |
+| `rightsizing` | Daily cost growth above 0.25% of mean per day, statistically significant | 25-35% |
 
 Recommendations are sorted by estimated monthly saving descending.
 

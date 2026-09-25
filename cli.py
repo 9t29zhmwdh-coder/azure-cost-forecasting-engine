@@ -9,12 +9,13 @@ from importlib.metadata import version
 from pathlib import Path
 
 import click
+import requests
 
 import acfe.demo as demo_data
-from acfe.analyzer import analyze
-from acfe.client import ConsumptionClient
+from acfe.analyzer import analyze, analyze_trends
+from acfe.client import CostManagementClient
 from acfe.forecasting import detect_anomalies, forecast
-from acfe.models import CostReport
+from acfe.models import Anomaly, CostReport
 from acfe.normalizer import fill_missing_days, normalize
 from acfe.report import to_html, to_json, to_markdown
 
@@ -74,7 +75,7 @@ def run_cmd(
         subscription_id = "demo-subscription"
     else:
         try:
-            client = ConsumptionClient.from_env()
+            client = CostManagementClient.from_env()
         except KeyError as exc:
             click.echo(
                 f"[acfe] Missing environment variable: {exc}. "
@@ -86,7 +87,11 @@ def run_cmd(
         subscription_id = client.subscription_id
         end = date.today().isoformat()
         start = (date.today() - timedelta(days=history)).isoformat()
-        records = client.get_usage(start, end)
+        try:
+            records = client.get_usage(start, end)
+        except (requests.RequestException, ValueError) as exc:
+            click.echo(f"[acfe] Azure Cost Management request failed: {exc}", err=True)
+            sys.exit(1)
 
     click.echo(f"[acfe] {len(records)} usage records loaded.", err=True)
 
@@ -97,11 +102,16 @@ def run_cmd(
     avg_daily = total_cost / len(daily) if daily else 0.0
 
     click.echo("[acfe] Running forecast...", err=True)
-    fc30 = forecast(daily, horizon_days=30)
+    try:
+        fc30 = forecast(daily, horizon_days=30)
+    except ValueError as exc:
+        # A new or empty subscription has too little history to fit a trend.
+        click.echo(f"[acfe] Cannot forecast: {exc}", err=True)
+        sys.exit(1)
     fc60 = forecast(daily, horizon_days=60)
     fc90 = forecast(daily, horizon_days=90)
 
-    anomalies = detect_anomalies(daily)
+    anomalies = [Anomaly(d, round(c, 2), round(z, 2)) for d, c, z in detect_anomalies(daily)]
     if anomalies:
         click.echo(f"[acfe] {len(anomalies)} cost anomaly day(s) detected.", err=True)
 
@@ -121,6 +131,8 @@ def run_cmd(
         forecast_90=fc90,
         recommendations=recommendations,
         total_estimated_monthly_saving=round(total_saving, 2),
+        anomalies=anomalies,
+        trends=analyze_trends(daily),
     )
 
     if output_format == "json":
@@ -130,7 +142,7 @@ def run_cmd(
     elif output_format == "html":
         content = to_html(report)
     else:
-        content = _render_table(report, daily, anomalies)
+        content = _render_table(report)
 
     if output:
         output.write_text(content, encoding="utf-8")
@@ -139,11 +151,7 @@ def run_cmd(
         click.echo(content)
 
 
-def _render_table(
-    report: CostReport,
-    daily: list,
-    anomalies: list,
-) -> str:
+def _render_table(report: CostReport) -> str:
     lines = [
         "Azure Cost Forecasting Engine",
         "=" * 60,
@@ -164,10 +172,17 @@ def _render_table(
         f"({report.forecast_90.projected_total_vs_baseline:+.2f} vs baseline)",
     ]
 
-    if anomalies:
+    if report.anomalies:
         lines += ["", "Anomalies detected", "-" * 40]
-        for a_date, a_cost, a_z in anomalies[:5]:
-            lines.append(f"  {a_date}  cost={a_cost:.2f}  z={a_z:.1f}")
+        for a in report.anomalies[:5]:
+            lines.append(f"  {a.date}  cost={a.cost:.2f}  z={a.z_score:.1f}")
+
+    moving = [t for t in report.trends if t.direction != "stable"]
+    if moving:
+        lines += ["", "Trends (services and resource groups)", "-" * 40]
+        for t in moving[:10]:
+            kind = "RG " if t.dimension == "resource_group" else "svc"
+            lines.append(f"  {kind} {t.percent_per_day:+.2f}%/day  {t.direction:<10}  {t.name}")
 
     if report.recommendations:
         lines += [

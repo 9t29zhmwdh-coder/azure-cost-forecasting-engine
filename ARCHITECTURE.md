@@ -9,10 +9,10 @@
 azure-cost-forecasting-engine/
 ├── acfe/
 │   ├── models.py        Shared dataclasses (UsageRecord, DailyCost, ForecastResult, CostReport)
-│   ├── client.py        Azure Consumption API REST client (OAuth2 client credentials)
+│   ├── client.py        Azure Cost Management Query API client (OAuth2 client credentials)
 │   ├── normalizer.py    Aggregate raw records into DailyCost time series
 │   ├── forecasting.py   Forecast engine: linear regression + Holt smoothing + anomaly detection
-│   ├── analyzer.py      Cost optimization: RI candidates, anomalies, growing services
+│   ├── analyzer.py      Cost optimization and trends per service and resource group
 │   ├── report.py        Serialization: JSON, Markdown, HTML
 │   └── demo.py          Synthetic demo data generator (no credentials required)
 ├── cli.py               Click CLI: acfe run [--demo] [--format FORMAT] [--output FILE]
@@ -25,7 +25,7 @@ azure-cost-forecasting-engine/
 ## Data Flow
 
 ```
-Azure Consumption API  (or demo.generate())
+Azure Cost Management Query API  (or demo.generate())
           |
           v
   client.get_usage(start, end)
