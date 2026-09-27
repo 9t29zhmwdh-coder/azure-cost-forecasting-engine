@@ -3,9 +3,11 @@
 ## Supported Versions
 
 | Version | Supported |
-|---|---|
-| 1.0.x | Yes |
-| < 1.0 | No |
+|---------|-----------|
+| Latest  | ✅ Yes    |
+| Older   | ❌ No     |
+
+Security fixes are only applied to the latest release.
 
 ## Credential Handling
 
@@ -13,7 +15,17 @@ All Azure credentials are loaded exclusively from environment variables or a `.e
 
 ## Reporting a Vulnerability
 
-Open a GitHub issue with label `security`. Describe the vulnerability type and affected component. Do not include exploit code in public issues. Response target: 72 hours.
+**Do NOT open a public GitHub issue for security vulnerabilities.**
+
+Instead, report it privately via [GitHub Security Advisory](https://github.com/9t29zhmwdh-coder/azure-cost-forecasting-engine/security/advisories/new) or contact the maintainer via the GitHub profile.
+
+Include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+A response within **48 hours** is the target, and the issue will be worked on promptly.
 
 ## Dependency Security
 
