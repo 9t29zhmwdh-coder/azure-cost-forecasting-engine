@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.1] - 2026-09-27
+
+### Security
+
+- `SECURITY.md` links GitHub's private advisory form in full. The link was missing or relative, so OpenSSF Scorecard found no reporting channel and scored the policy 4 of 10.
+- Vulnerabilities were to be reported as a public issue labelled `security`, which discloses them before a fix exists. Reports now go through the private advisory form only.
+- The supported-versions table named a version line that is no longer current; it now says that the latest release gets security fixes.
+
+### Changed
+
+Dependency updates merged since v1.1.0:
+
+- chore(ci): bump the actions group with 3 updates (#32)
+- chore(deps): bump ruff from 0.16.0 to 0.16.1 in the python group (#31)
+
+---
+
 ## [1.1.0] - 2026-09-25
 
 ### Added
