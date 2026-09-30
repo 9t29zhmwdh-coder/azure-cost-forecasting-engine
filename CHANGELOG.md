@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.4] - 2026-09-30
+
+### Changed
+
+Dependency and CI updates merged since v1.1.3, each with green checks:
+
+- chore(deps): bump ruff from 0.16.1 to 0.16.8 in the python group (#37)
+- chore(ci): bump the actions group with 3 updates (#38)
+
+---
+
 ## [1.1.3] - 2026-09-27
 
 ### Security
