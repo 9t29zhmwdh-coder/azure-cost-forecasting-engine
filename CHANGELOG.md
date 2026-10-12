@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.6] - 2026-10-12
+
+### Changed
+
+Dependency and CI updates merged since v1.1.5, each with green checks:
+
+- chore(deps): bump the python group across 1 directory with 10 updates (#41)
+- chore(ci): bump the actions group with 4 updates (#42)
+
+---
+
 ## [1.1.5] - 2026-10-11
 
 ### Fixed
